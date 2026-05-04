@@ -1212,13 +1212,13 @@ export default function DrFanaeeSite() {
         
         /* Mobile Responsive */
         @media (max-width: 768px) {
-          .hero-grid { grid-template-columns: 1fr !important; gap: 20px !important; padding-top: 100px !important; padding-bottom: 40px !important; padding-left: 20px !important; padding-right: 20px !important; }
+          .hero-grid { grid-template-columns: 1fr !important; gap: 0px !important; padding-top: 100px !important; padding-bottom: 0px !important; padding-left: 20px !important; padding-right: 20px !important; }
           .hero-text h1 { font-size: 34px !important; line-height: 1.15 !important; }
           .hero-cta { flex-direction: column !important; }
           .hero-cta a, .hero-cta button { width: 100% !important; justify-content: center !important; }
           .hero-stats { flex-direction: column !important; gap: 12px !important; }
           .hero-stats > div { border-left: none !important; padding-left: 0 !important; }
-          .hero-image-container { width: 100% !important; height: 280px !important; border-radius: 16px !important; margin-top: 8px !important; }
+          .hero-image-container { width: calc(100% + 40px) !important; height: 250px !important; border-radius: 0 !important; margin-top: 16px !important; margin-left: -20px !important; margin-right: -20px !important; }
           .nav-links { display: none !important; }
           .nav-mobile-btn { display: flex !important; }
           .conditions-grid { grid-template-columns: 1fr 1fr !important; }
@@ -1242,8 +1242,11 @@ export default function DrFanaeeSite() {
           .hero-floating-badge { display: none !important; }
           .hero-dot-indicators { bottom: 12px !important; }
           .scroll-indicator { display: none !important; }
+          .hero-image-container img { object-fit: cover !important; object-position: center 30% !important; }
           .credential-tags { flex-wrap: wrap !important; }
           .since-2013 { font-size: 18px !important; }
+          .hero-trust-badges { flex-wrap: wrap !important; gap: 16px !important; }
+          .hero-trust-badges > div { padding-left: 0 !important; border-left: none !important; }
         }
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .6; } }
@@ -1307,7 +1310,7 @@ export default function DrFanaeeSite() {
                 {PHONE}
               </a>
             </div>
-            <div className="hero-stats" style={{ display: "flex", gap: 28 }}>
+            <div className="hero-stats hero-trust-badges" style={{ display: "flex", gap: 28 }}>
               {[{ l: "Board Certified", v: "Pain Medicine & Anesthesiology" }, { l: "Training", v: "U of Chicago · NYU Langone" }, { l: "Serving Long Island", v: "Since 2013" }].map((s, i) => (
                 <div key={i} style={{ borderLeft: i > 0 ? "1px solid rgba(255,255,255,0.08)" : "none", paddingLeft: i > 0 ? 28 : 0 }}>
                   <div style={{ fontSize: 10, color: "rgba(255,255,255,0.35)", textTransform: "uppercase", letterSpacing: "1px", fontWeight: 500 }}>{s.l}</div>
