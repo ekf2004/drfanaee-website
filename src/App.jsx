@@ -1242,7 +1242,9 @@ export default function DrFanaeeSite() {
           .hero-floating-badge { display: none !important; }
           .hero-dot-indicators { bottom: 12px !important; }
           .scroll-indicator { display: none !important; }
-          .hero-image-container img { object-fit: cover !important; object-position: center 30% !important; }
+          .hero-img-0 { object-fit: cover !important; object-position: center center !important; }
+          .hero-img-1 { object-fit: contain !important; object-position: center center !important; background: #0f2340; }
+          .hero-img-2 { object-fit: cover !important; object-position: center 30% !important; }
           .credential-tags { flex-wrap: wrap !important; }
           .since-2013 { font-size: 18px !important; }
           .hero-trust-badges { flex-wrap: wrap !important; gap: 16px !important; }
@@ -1325,7 +1327,7 @@ export default function DrFanaeeSite() {
             <div className="hero-image-container" style={{ width: 380, height: 440, borderRadius: 24, background: "#0f2340", position: "relative", overflow: "hidden" }}>
               {/* Carousel images */}
               {heroImages.map((img, i) => (
-                <img key={i} src={img.src} alt={img.alt} style={{
+                <img key={i} className={`hero-img-${i}`} src={img.src} alt={img.alt} style={{
                   position: "absolute", top: 0, left: 0, width: "100%", height: "100%",
                   objectFit: img.fit || "cover", objectPosition: img.position || "center center",
                   opacity: heroImage === i ? 1 : 0,
