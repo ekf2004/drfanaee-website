@@ -1459,17 +1459,19 @@ export default function DrFanaeeSite() {
               <div key={i} style={{ background: "white", borderRadius: 18, overflow: "hidden", boxShadow: "0 1px 4px rgba(0,0,0,0.04)", border: "1px solid #eef2f6", transition: "all 0.3s" }}
                 onMouseOver={e => { e.currentTarget.style.transform = "translateY(-4px)"; e.currentTarget.style.boxShadow = "0 12px 32px rgba(0,0,0,0.08)"; }}
                 onMouseOut={e => { e.currentTarget.style.transform = ""; e.currentTarget.style.boxShadow = "0 1px 4px rgba(0,0,0,0.04)"; }}>
-                <a href={`https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`} target="_blank" rel="noopener noreferrer" style={{ display: "block", height: 160, overflow: "hidden", position: "relative" }}>
-                  <img 
-                    src={`https://maps.googleapis.com/maps/api/staticmap?center=${loc.lat},${loc.lng}&zoom=15&size=400x160&scale=2&markers=color:0x2d8cf0%7C${loc.lat},${loc.lng}&style=feature:all%7Celement:geometry%7Csaturation:-80&style=feature:water%7Celement:geometry.fill%7Ccolor:0xd4e6f1&key=`}
-                    alt={`Map of ${loc.name} office`}
-                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                    onError={(e) => { e.target.style.display = "none"; e.target.parentElement.style.background = "#e8eef4"; e.target.parentElement.innerHTML = '<div style="height:100%;display:flex;align-items:center;justify-content:center;color:#2d8cf0;font-size:13px;font-weight:600;gap:6px"><svg width=\'16\' height=\'16\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'2\'><path d=\'M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z\'/><circle cx=\'12\' cy=\'10\' r=\'3\'/></svg>Open in Google Maps</div>'; }}
+                <div style={{ height: 180, position: "relative", overflow: "hidden" }}>
+                  <iframe
+                    title={`Map of ${loc.name} office`}
+                    src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${encodeURIComponent(loc.address + ", " + loc.city)}&zoom=15`}
+                    style={{ width: "100%", height: "100%", border: "none" }}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    onError={(e) => { e.target.style.display = "none"; }}
                   />
-                  <div style={{ position: "absolute", bottom: 8, right: 8, background: "rgba(255,255,255,0.9)", borderRadius: 6, padding: "4px 8px", fontSize: 10, fontWeight: 600, color: "#2d8cf0" }}>
+                  <a href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(loc.address + ", " + loc.city)}`} target="_blank" rel="noopener noreferrer" style={{ position: "absolute", bottom: 8, right: 8, background: "rgba(255,255,255,0.95)", borderRadius: 8, padding: "6px 12px", fontSize: 12, fontWeight: 600, color: "#2d8cf0", textDecoration: "none", boxShadow: "0 2px 8px rgba(0,0,0,0.15)", display: "flex", alignItems: "center", gap: 4 }}>
                     📍 Get Directions
-                  </div>
-                </a>
+                  </a>
+                </div>
                 <div style={{ padding: "24px" }}>
                   <h3 style={{ fontSize: 20, fontWeight: 700, color: "#0a192f", marginBottom: 12, fontFamily: "'Instrument Serif', Georgia, serif" }}>{loc.name}</h3>
                   <div style={{ fontSize: 16, color: "#4a5a6d", lineHeight: 1.7, marginBottom: 16, fontWeight: 500 }}>{loc.address}<br/>{loc.city}</div>
