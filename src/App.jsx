@@ -1039,7 +1039,7 @@ const ProcedurePage = ({ procedure, onBack, onSchedule }) => {
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="2" style={{ transform: openFaq === i ? "rotate(180deg)" : "none", transition: "transform 0.3s", flexShrink: 0 }}><polyline points="6 9 12 15 18 9"/></svg>
                 </button>
                 <div style={{ maxHeight: openFaq === i ? 300 : 0, overflow: "hidden", transition: "max-height 0.4s ease" }}>
-                  <p style={{ fontSize: 14, color: "#5a6b7d", lineHeight: 1.7, paddingBottom: 18 }}>{faq.a}</p>
+                  <p style={{ fontSize: 15, color: "#4a5a6d", lineHeight: 1.8, fontWeight: 500, paddingBottom: 18 }}>{faq.a}</p>
                 </div>
               </div>
             ))}
@@ -1087,9 +1087,9 @@ export default function DrFanaeeSite() {
   const [activeReview, setActiveReview] = useState(0);
   const [heroImage, setHeroImage] = useState(0);
   const heroImages = [
-    { src: IMG_ERIC, alt: "Dr. Eric Fanaee - Pain Management Specialist" },
-    { src: IMG_CONSULT, alt: "Dr. Fanaee consulting with patient using spine model" },
-    { src: IMG_PROCEDURE, alt: "Dr. Fanaee in the procedure room with fluoroscopy equipment" },
+    { src: IMG_ERIC, alt: "Dr. Eric Fanaee - Pain Management Specialist", fit: "cover", position: "center center" },
+    { src: IMG_CONSULT, alt: "Dr. Fanaee consulting with patient using spine model", fit: "contain", position: "center center" },
+    { src: IMG_PROCEDURE, alt: "Dr. Fanaee in the procedure room with fluoroscopy equipment", fit: "cover", position: "center 30%" },
   ];
   const [scrolled, setScrolled] = useState(false);
   const [openFaq, setOpenFaq] = useState(null);
@@ -1259,7 +1259,7 @@ export default function DrFanaeeSite() {
             <h1 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 54, fontWeight: 400, color: "white", lineHeight: 1.1, marginBottom: 12 }}>
               At the Forefront of<br/><span style={{ color: "#4da3ff" }}>Pain Medicine</span><br/><span style={{ fontSize: 24, color: "rgba(255,255,255,0.4)" }}>Since 2013</span>
             </h1>
-            <p style={{ fontSize: 17, color: "rgba(255,255,255,0.55)", lineHeight: 1.7, marginBottom: 32, maxWidth: 500 }}>
+            <p style={{ fontSize: 19, color: "rgba(255,255,255,0.7)", lineHeight: 1.8, marginBottom: 32, maxWidth: 540, fontWeight: 500 }}>
               Board-certified interventional pain management serving Long Island. Advanced, non-surgical treatments to reduce pain, restore function, and get you back to the life you love.
             </p>
             <div style={{ display: "flex", gap: 14, marginBottom: 40 }}>
@@ -1288,7 +1288,7 @@ export default function DrFanaeeSite() {
               {heroImages.map((img, i) => (
                 <img key={i} src={img.src} alt={img.alt} style={{
                   position: "absolute", top: 0, left: 0, width: "100%", height: "100%",
-                  objectFit: "cover", objectPosition: "center center",
+                  objectFit: img.fit || "cover", objectPosition: img.position || "center center",
                   opacity: heroImage === i ? 1 : 0,
                   transition: "opacity 1s ease-in-out",
                 }} />
@@ -1329,7 +1329,7 @@ export default function DrFanaeeSite() {
           <div style={{ textAlign: "center", marginBottom: 56 }}>
             <SectionLabel text="What We Treat" />
             <SectionTitle>Conditions We Treat</SectionTitle>
-            <p style={{ fontSize: 15, color: "#5a6b7d", marginTop: 12, maxWidth: 600, margin: "12px auto 0" }}>
+            <p style={{ fontSize: 16, color: "#4a5a6d", marginTop: 12, maxWidth: 600, margin: "12px auto 0", fontWeight: 500 }}>
               Comprehensive pain management for acute and chronic conditions affecting the spine, joints, and nervous system.
             </p>
           </div>
@@ -1339,8 +1339,8 @@ export default function DrFanaeeSite() {
                 onMouseOver={e => { e.currentTarget.style.transform = "translateY(-4px)"; e.currentTarget.style.boxShadow = "0 8px 24px rgba(0,0,0,0.06)"; e.currentTarget.style.borderColor = "rgba(45,140,240,0.2)"; }}
                 onMouseOut={e => { e.currentTarget.style.transform = ""; e.currentTarget.style.boxShadow = "0 1px 4px rgba(0,0,0,0.04)"; e.currentTarget.style.borderColor = "#eef2f6"; }}>
                 <div style={{ fontSize: 28, marginBottom: 10 }}>{c.icon}</div>
-                <div style={{ fontSize: 15, fontWeight: 600, color: "#0a192f", marginBottom: 6 }}>{c.name}</div>
-                <div style={{ fontSize: 12, color: "#7a8a9d", lineHeight: 1.5 }}>{c.desc}</div>
+                <div style={{ fontSize: 17, fontWeight: 700, color: "#0a192f", marginBottom: 6 }}>{c.name}</div>
+                <div style={{ fontSize: 15, color: "#5a6b7d", lineHeight: 1.7, fontWeight: 500 }}>{c.desc}</div>
               </div>
             ))}
           </div>
@@ -1363,12 +1363,12 @@ export default function DrFanaeeSite() {
                 <div style={{ display: "flex", gap: 14 }}>
                   <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#2d8cf0", marginTop: 7, flexShrink: 0 }} />
                   <div>
-                    <div style={{ fontSize: 16, fontWeight: 600, color: "white", marginBottom: 6 }}>{t.name}</div>
-                    <div style={{ fontSize: 13, color: "rgba(255,255,255,0.4)", lineHeight: 1.6 }}>{t.desc}</div>
+                    <div style={{ fontSize: 20, fontWeight: 700, color: "white", marginBottom: 8 }}>{t.name}</div>
+                    <div style={{ fontSize: 16, color: "rgba(255,255,255,0.65)", lineHeight: 1.8, fontWeight: 500 }}>{t.desc}</div>
                   </div>
                 </div>
                 <div style={{ display: "flex", justifyContent: "flex-end", marginTop: 8 }}>
-                  <span style={{ fontSize: 11, color: "#4da3ff", fontWeight: 600 }}>Learn more →</span>
+                  <span style={{ fontSize: 13, color: "#4da3ff", fontWeight: 700 }}>Learn more →</span>
                 </div>
               </div>
             ))}
@@ -1391,8 +1391,8 @@ export default function DrFanaeeSite() {
             <div style={{ padding: "36px 40px" }}>
               <div style={{ fontSize: 12, fontWeight: 600, color: "#2d8cf0", letterSpacing: "1px", textTransform: "uppercase", marginBottom: 8 }}>Medical Director</div>
               <h3 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 30, color: "#0a192f", marginBottom: 4 }}>Eric Fanaee, MD</h3>
-              <div style={{ fontSize: 13, color: "#5a6b7d", marginBottom: 16 }}>Board Certified in Pain Medicine & Anesthesiology · University of Chicago · NYU Langone</div>
-              <p style={{ fontSize: 14, color: "#5a6b7d", lineHeight: 1.7, marginBottom: 20 }}>{PROVIDERS[0].bio}</p>
+              <div style={{ fontSize: 16, color: "#4a5a6d", marginBottom: 16, fontWeight: 500 }}>Board Certified in Pain Medicine & Anesthesiology · University of Chicago · NYU Langone</div>
+              <p style={{ fontSize: 16, color: "#4a5a6d", lineHeight: 1.8, marginBottom: 20, fontWeight: 500 }}>{PROVIDERS[0].bio}</p>
               <div style={{ display: "flex", gap: 8 }}>
                 {["Pain Medicine", "Anesthesiology", "Interventional Spine", "NYU Fellowship"].map(t => (
                   <span key={t} style={{ padding: "5px 12px", background: "#eef4fb", color: "#2d6a8a", fontSize: 11, fontWeight: 600, borderRadius: 6 }}>{t}</span>
@@ -1411,9 +1411,9 @@ export default function DrFanaeeSite() {
                   <img src={p.img} alt={p.name} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }} />
                 </div>
                 <div style={{ padding: "20px" }}>
-                  <div style={{ fontSize: 16, fontWeight: 700, color: "#0a192f", marginBottom: 2 }}>{p.name}</div>
-                  <div style={{ fontSize: 11, fontWeight: 600, color: "#2d8cf0", marginBottom: 10, letterSpacing: "0.2px" }}>{p.role}</div>
-                  <div style={{ fontSize: 12, color: "#5a6b7d", lineHeight: 1.6 }}>{p.bio}</div>
+                  <div style={{ fontSize: 20, fontWeight: 700, color: "#0a192f", marginBottom: 4 }}>{p.name}</div>
+                  <div style={{ fontSize: 14, fontWeight: 700, color: "#2d8cf0", marginBottom: 12, letterSpacing: "0.2px" }}>{p.role}</div>
+                  <div style={{ fontSize: 15, color: "#4a5a6d", lineHeight: 1.8, fontWeight: 500 }}>{p.bio}</div>
                 </div>
               </div>
             ))}
@@ -1434,7 +1434,7 @@ export default function DrFanaeeSite() {
             {REVIEWS.map((r, i) => (
               <div key={i} style={{ position: i === activeReview ? "relative" : "absolute", top: 0, left: 0, right: 0, opacity: i === activeReview ? 1 : 0, transition: "opacity 0.5s", padding: "32px 40px", background: "#f8fafb", borderRadius: 20, border: "1px solid #eef2f6" }}>
                 <StarRow size={18} />
-                <p style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 22, color: "#0a192f", lineHeight: 1.6, marginTop: 16, fontStyle: "italic" }}>"{r.text}"</p>
+                <p style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 26, color: "#0a192f", lineHeight: 1.6, marginTop: 16, fontStyle: "italic" }}>"{r.text}"</p>
                 <div style={{ fontSize: 13, color: "#94a3b8", marginTop: 16, fontWeight: 500 }}>— {r.author}</div>
               </div>
             ))}
@@ -1459,15 +1459,20 @@ export default function DrFanaeeSite() {
               <div key={i} style={{ background: "white", borderRadius: 18, overflow: "hidden", boxShadow: "0 1px 4px rgba(0,0,0,0.04)", border: "1px solid #eef2f6", transition: "all 0.3s" }}
                 onMouseOver={e => { e.currentTarget.style.transform = "translateY(-4px)"; e.currentTarget.style.boxShadow = "0 12px 32px rgba(0,0,0,0.08)"; }}
                 onMouseOut={e => { e.currentTarget.style.transform = ""; e.currentTarget.style.boxShadow = "0 1px 4px rgba(0,0,0,0.04)"; }}>
-                <div style={{ height: 160, background: "#e8eef4", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <div style={{ textAlign: "center", color: "#94a3b8" }}>
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    <div style={{ fontSize: 11, marginTop: 4 }}>Google Map embed</div>
+                <a href={`https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`} target="_blank" rel="noopener noreferrer" style={{ display: "block", height: 160, overflow: "hidden", position: "relative" }}>
+                  <img 
+                    src={`https://maps.googleapis.com/maps/api/staticmap?center=${loc.lat},${loc.lng}&zoom=15&size=400x160&scale=2&markers=color:0x2d8cf0%7C${loc.lat},${loc.lng}&style=feature:all%7Celement:geometry%7Csaturation:-80&style=feature:water%7Celement:geometry.fill%7Ccolor:0xd4e6f1&key=`}
+                    alt={`Map of ${loc.name} office`}
+                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                    onError={(e) => { e.target.style.display = "none"; e.target.parentElement.style.background = "#e8eef4"; e.target.parentElement.innerHTML = '<div style="height:100%;display:flex;align-items:center;justify-content:center;color:#2d8cf0;font-size:13px;font-weight:600;gap:6px"><svg width=\'16\' height=\'16\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'2\'><path d=\'M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z\'/><circle cx=\'12\' cy=\'10\' r=\'3\'/></svg>Open in Google Maps</div>'; }}
+                  />
+                  <div style={{ position: "absolute", bottom: 8, right: 8, background: "rgba(255,255,255,0.9)", borderRadius: 6, padding: "4px 8px", fontSize: 10, fontWeight: 600, color: "#2d8cf0" }}>
+                    📍 Get Directions
                   </div>
-                </div>
+                </a>
                 <div style={{ padding: "24px" }}>
                   <h3 style={{ fontSize: 20, fontWeight: 700, color: "#0a192f", marginBottom: 12, fontFamily: "'Instrument Serif', Georgia, serif" }}>{loc.name}</h3>
-                  <div style={{ fontSize: 14, color: "#5a6b7d", lineHeight: 1.7, marginBottom: 16 }}>{loc.address}<br/>{loc.city}</div>
+                  <div style={{ fontSize: 16, color: "#4a5a6d", lineHeight: 1.7, marginBottom: 16, fontWeight: 500 }}>{loc.address}<br/>{loc.city}</div>
                   <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2d8cf0" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                     <a href={`tel:${loc.phone.replace(/-/g,"")}`} style={{ fontSize: 14, color: "#2d8cf0", fontWeight: 600, textDecoration: "none" }}>{loc.phone}</a>
@@ -1476,7 +1481,7 @@ export default function DrFanaeeSite() {
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                     <span style={{ fontSize: 13, color: "#94a3b8" }}>{loc.hours}</span>
                   </div>
-                  {loc.nearby && <div style={{ fontSize: 11, color: "#94a3b8", lineHeight: 1.5, borderTop: "1px solid #eef2f6", paddingTop: 12 }}>{loc.nearby}</div>}
+                  {loc.nearby && <div style={{ fontSize: 13, color: "#7a8a9d", lineHeight: 1.6, fontWeight: 500, borderTop: "1px solid #eef2f6", paddingTop: 12 }}>{loc.nearby}</div>}
                 </div>
               </div>
             ))}
@@ -1490,13 +1495,13 @@ export default function DrFanaeeSite() {
           <div style={{ textAlign: "center", marginBottom: 40 }}>
             <SectionLabel text="Insurance" light />
             <SectionTitle light>Insurance We Accept</SectionTitle>
-            <p style={{ fontSize: 15, color: "rgba(255,255,255,0.45)", marginTop: 12, maxWidth: 600, margin: "12px auto 0" }}>
+            <p style={{ fontSize: 16, color: "rgba(255,255,255,0.55)", marginTop: 12, maxWidth: 600, margin: "12px auto 0", fontWeight: 500 }}>
               We accept most major insurance plans. Contact our office to verify your specific coverage.
             </p>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12, marginBottom: 32 }}>
             {["Medicare", "Aetna", "Blue Cross Blue Shield", "Cigna", "United Healthcare", "Oxford", "Humana", "Empire", "Fidelis", "Healthfirst", "Magnacare", "Multiplan", "Workers' Compensation", "No-Fault / Motor Vehicle", "GHI / Emblem Health", "GHI-NYC", "NYSHIP", "UHC Community Plan", "Wellcare", "1199"].map((ins, i) => (
-              <div key={i} style={{ padding: "14px 16px", background: "rgba(255,255,255,0.04)", borderRadius: 10, border: "1px solid rgba(255,255,255,0.06)", fontSize: 13, color: "rgba(255,255,255,0.7)", fontWeight: 500, textAlign: "center" }}>
+              <div key={i} style={{ padding: "14px 16px", background: "rgba(255,255,255,0.04)", borderRadius: 10, border: "1px solid rgba(255,255,255,0.06)", fontSize: 15, color: "rgba(255,255,255,0.9)", fontWeight: 600, textAlign: "center" }}>
                 {ins}
               </div>
             ))}
@@ -1517,11 +1522,11 @@ export default function DrFanaeeSite() {
           {FAQS.map((faq, i) => (
             <div key={i} style={{ borderBottom: "1px solid #eef2f6", overflow: "hidden" }}>
               <button onClick={() => setOpenFaq(openFaq === i ? null : i)} style={{ width: "100%", padding: "20px 0", background: "none", border: "none", cursor: "pointer", fontFamily: "inherit", display: "flex", justifyContent: "space-between", alignItems: "center", textAlign: "left" }}>
-                <span style={{ fontSize: 16, fontWeight: 600, color: "#0a192f", paddingRight: 16 }}>{faq.q}</span>
+                <span style={{ fontSize: 19, fontWeight: 700, color: "#0a192f", paddingRight: 16 }}>{faq.q}</span>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="2" style={{ transform: openFaq === i ? "rotate(180deg)" : "none", transition: "transform 0.3s", flexShrink: 0 }}><polyline points="6 9 12 15 18 9"/></svg>
               </button>
               <div style={{ maxHeight: openFaq === i ? 300 : 0, overflow: "hidden", transition: "max-height 0.4s ease" }}>
-                <p style={{ fontSize: 14, color: "#5a6b7d", lineHeight: 1.7, paddingBottom: 20 }}>{faq.a}</p>
+                <p style={{ fontSize: 16, color: "#4a5a6d", lineHeight: 1.8, paddingBottom: 20, fontWeight: 500 }}>{faq.a}</p>
               </div>
             </div>
           ))}
@@ -1546,8 +1551,8 @@ export default function DrFanaeeSite() {
                 <div style={{ height: 6, background: "linear-gradient(90deg, #2d8cf0, #1e5fa0)" }} />
                 <div style={{ padding: "22px" }}>
                   <span style={{ fontSize: 11, fontWeight: 600, padding: "3px 8px", background: "#eef4fb", color: "#2d6a8a", borderRadius: 4 }}>{post.category}</span>
-                  <h3 style={{ fontSize: 16, fontWeight: 700, color: "#0a192f", marginTop: 12, marginBottom: 8, lineHeight: 1.3 }}>{post.title}</h3>
-                  <p style={{ fontSize: 13, color: "#7a8a9d", lineHeight: 1.5 }}>{post.excerpt.substring(0, 100)}...</p>
+                  <h3 style={{ fontSize: 17, fontWeight: 700, color: "#0a192f", marginTop: 12, marginBottom: 8, lineHeight: 1.3 }}>{post.title}</h3>
+                  <p style={{ fontSize: 15, color: "#5a6b7d", lineHeight: 1.7, fontWeight: 500 }}>{post.excerpt.substring(0, 100)}...</p>
                   <div style={{ marginTop: 14, fontSize: 12, color: "#2d8cf0", fontWeight: 600 }}>Read more →</div>
                 </div>
               </div>
