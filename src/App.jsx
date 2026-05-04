@@ -1212,13 +1212,13 @@ export default function DrFanaeeSite() {
         
         /* Mobile Responsive */
         @media (max-width: 768px) {
-          .hero-grid { grid-template-columns: 1fr !important; gap: 32px !important; padding-top: 100px !important; }
-          .hero-text h1 { font-size: 36px !important; }
+          .hero-grid { grid-template-columns: 1fr !important; gap: 20px !important; padding-top: 100px !important; padding-bottom: 40px !important; padding-left: 20px !important; padding-right: 20px !important; }
+          .hero-text h1 { font-size: 34px !important; line-height: 1.15 !important; }
           .hero-cta { flex-direction: column !important; }
           .hero-cta a, .hero-cta button { width: 100% !important; justify-content: center !important; }
           .hero-stats { flex-direction: column !important; gap: 12px !important; }
           .hero-stats > div { border-left: none !important; padding-left: 0 !important; }
-          .hero-image-container { width: 100% !important; height: 300px !important; }
+          .hero-image-container { width: 100% !important; height: 280px !important; border-radius: 16px !important; margin-top: 8px !important; }
           .nav-links { display: none !important; }
           .nav-mobile-btn { display: flex !important; }
           .conditions-grid { grid-template-columns: 1fr 1fr !important; }
@@ -1239,7 +1239,11 @@ export default function DrFanaeeSite() {
           .cta-buttons { flex-direction: column !important; }
           .cta-buttons a, .cta-buttons button { width: 100% !important; justify-content: center !important; }
           .appt-form-grid { grid-template-columns: 1fr !important; }
+          .hero-floating-badge { display: none !important; }
+          .hero-dot-indicators { bottom: 12px !important; }
+          .scroll-indicator { display: none !important; }
           .credential-tags { flex-wrap: wrap !important; }
+          .since-2013 { font-size: 18px !important; }
         }
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .6; } }
@@ -1289,7 +1293,7 @@ export default function DrFanaeeSite() {
               <span style={{ color: "rgba(255,255,255,0.75)", fontSize: 12, fontWeight: 600, letterSpacing: "0.5px" }}>4.9 STARS · 634+ GOOGLE REVIEWS</span>
             </div>
             <h1 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 54, fontWeight: 400, color: "white", lineHeight: 1.1, marginBottom: 12 }}>
-              At the Forefront of<br/><span style={{ color: "#4da3ff" }}>Pain Medicine</span><br/><span style={{ fontSize: 24, color: "rgba(255,255,255,0.4)" }}>Since 2013</span>
+              At the Forefront of<br/><span style={{ color: "#4da3ff" }}>Pain Medicine</span><br/><span className="since-2013" style={{ fontSize: 24, color: "rgba(255,255,255,0.4)" }}>Since 2013</span>
             </h1>
             <p style={{ fontSize: 19, color: "rgba(255,255,255,0.7)", lineHeight: 1.8, marginBottom: 32, maxWidth: 540, fontWeight: 500 }}>
               Board-certified interventional pain management serving Long Island. Advanced, non-surgical treatments to reduce pain, restore function, and get you back to the life you love.
@@ -1326,7 +1330,7 @@ export default function DrFanaeeSite() {
                 }} />
               ))}
               {/* Dot indicators */}
-              <div style={{ position: "absolute", bottom: 76, left: "50%", transform: "translateX(-50%)", display: "flex", gap: 8, zIndex: 2 }}>
+              <div className="hero-dot-indicators" style={{ position: "absolute", bottom: 76, left: "50%", transform: "translateX(-50%)", display: "flex", gap: 8, zIndex: 2 }}>
                 {heroImages.map((_, i) => (
                   <button key={i} onClick={() => setHeroImage(i)} style={{
                     width: heroImage === i ? 20 : 8, height: 8, borderRadius: 4, border: "none", cursor: "pointer",
@@ -1335,7 +1339,7 @@ export default function DrFanaeeSite() {
                 ))}
               </div>
               {/* Floating review count */}
-              <div style={{ position: "absolute", bottom: 20, left: 20, right: 20, background: "rgba(10,25,47,0.85)", backdropFilter: "blur(12px)", borderRadius: 14, padding: "14px 18px", border: "1px solid rgba(45,140,240,0.15)", display: "flex", alignItems: "center", justifyContent: "space-between", zIndex: 2 }}>
+              <div className="hero-floating-badge" style={{ position: "absolute", bottom: 20, left: 20, right: 20, background: "rgba(10,25,47,0.85)", backdropFilter: "blur(12px)", borderRadius: 14, padding: "14px 18px", border: "1px solid rgba(45,140,240,0.15)", display: "flex", alignItems: "center", justifyContent: "space-between", zIndex: 2 }}>
                 <div>
                   <StarRow size={14} />
                   <div style={{ fontSize: 12, color: "rgba(255,255,255,0.6)", marginTop: 4 }}>634+ verified reviews</div>
