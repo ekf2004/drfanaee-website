@@ -929,7 +929,7 @@ const SectionLabel = ({ text, light = false }) => (
 );
 
 const SectionTitle = ({ children, light = false }) => (
-  <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 42, fontWeight: 400, color: light ? "white" : "#0a192f", lineHeight: 1.2 }}>{children}</h2>
+  <h2 className="section-title" style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 42, fontWeight: 400, color: light ? "white" : "#0a192f", lineHeight: 1.2 }}>{children}</h2>
 );
 
 // ============================================================
@@ -1209,6 +1209,38 @@ export default function DrFanaeeSite() {
         html { scroll-behavior: smooth; }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         ::selection { background: #2d8cf0; color: white; }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+          .hero-grid { grid-template-columns: 1fr !important; gap: 32px !important; padding-top: 100px !important; }
+          .hero-text h1 { font-size: 36px !important; }
+          .hero-cta { flex-direction: column !important; }
+          .hero-cta a, .hero-cta button { width: 100% !important; justify-content: center !important; }
+          .hero-stats { flex-direction: column !important; gap: 12px !important; }
+          .hero-stats > div { border-left: none !important; padding-left: 0 !important; }
+          .hero-image-container { width: 100% !important; height: 300px !important; }
+          .nav-links { display: none !important; }
+          .nav-mobile-btn { display: flex !important; }
+          .conditions-grid { grid-template-columns: 1fr 1fr !important; }
+          .treatments-grid { grid-template-columns: 1fr !important; }
+          .providers-other-grid { grid-template-columns: 1fr 1fr !important; }
+          .provider-featured { grid-template-columns: 1fr !important; }
+          .provider-featured-photo { min-height: 200px !important; }
+          .locations-grid { grid-template-columns: 1fr !important; }
+          .reviews-grid { grid-template-columns: 1fr !important; }
+          .insurance-grid { grid-template-columns: 1fr 1fr !important; }
+          .stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          .footer-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
+          .blog-preview-grid { grid-template-columns: 1fr !important; }
+          .blog-preview-header { flex-direction: column !important; align-items: flex-start !important; gap: 8px !important; }
+          .faq-container { padding: 60px 16px !important; }
+          .section-title { font-size: 30px !important; }
+          .section-padding { padding: 60px 16px !important; }
+          .cta-buttons { flex-direction: column !important; }
+          .cta-buttons a, .cta-buttons button { width: 100% !important; justify-content: center !important; }
+          .appt-form-grid { grid-template-columns: 1fr !important; }
+          .credential-tags { flex-wrap: wrap !important; }
+        }
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .6; } }
       `}</style>
@@ -1228,7 +1260,7 @@ export default function DrFanaeeSite() {
               <div style={{ color: "rgba(255,255,255,0.4)", fontSize: 10, fontWeight: 500, letterSpacing: "1.2px", textTransform: "uppercase" }}>Pain Medicine</div>
             </div>
           </a>
-          <div style={{ display: "flex", alignItems: "center", gap: 28 }}>
+          <div className="nav-links" style={{ display: "flex", alignItems: "center", gap: 28 }}>
             {["Services", "Providers", "Locations", "Insurance", "FAQ", "Blog"].map(l => (
               <a key={l} href={`#${l.toLowerCase()}`} onClick={(e) => { e.preventDefault(); if (l === "Blog") { setShowBlogIndex(true); setActiveProcedure(null); setActiveBlog(null); window.scrollTo(0, 0); } else { setShowBlogIndex(false); setActiveBlog(null); setActiveProcedure(null); document.getElementById(l.toLowerCase())?.scrollIntoView({ behavior: "smooth" }); } }} style={{ color: "rgba(255,255,255,0.65)", textDecoration: "none", fontSize: 13, fontWeight: 500, transition: "color 0.2s", cursor: "pointer" }}
                 onMouseOver={e => e.target.style.color = "white"} onMouseOut={e => e.target.style.color = "rgba(255,255,255,0.65)"}>{l}</a>
@@ -1250,7 +1282,7 @@ export default function DrFanaeeSite() {
         <div style={{ position: "absolute", bottom: "15%", left: "8%", width: 300, height: 300, borderRadius: "50%", background: "radial-gradient(circle, rgba(45,140,240,0.05) 0%, transparent 70%)" }} />
         <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(rgba(255,255,255,0.02) 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
 
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "140px 32px 80px", position: "relative", zIndex: 1, display: "grid", gridTemplateColumns: "1.1fr 0.9fr", gap: 60, alignItems: "center" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "140px 32px 80px", position: "relative", zIndex: 1, display: "grid", gridTemplateColumns: "1.1fr 0.9fr", gap: 60, alignItems: "center", className: "hero-grid" }}>
           <div style={{ animation: "fadeInUp 0.8s ease" }}>
             <div style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "6px 16px", background: "rgba(45,140,240,0.1)", borderRadius: 20, marginBottom: 24, border: "1px solid rgba(45,140,240,0.18)" }}>
               <StarRow size={12} />
@@ -1262,7 +1294,7 @@ export default function DrFanaeeSite() {
             <p style={{ fontSize: 19, color: "rgba(255,255,255,0.7)", lineHeight: 1.8, marginBottom: 32, maxWidth: 540, fontWeight: 500 }}>
               Board-certified interventional pain management serving Long Island. Advanced, non-surgical treatments to reduce pain, restore function, and get you back to the life you love.
             </p>
-            <div style={{ display: "flex", gap: 14, marginBottom: 40 }}>
+            <div className="hero-cta" style={{ display: "flex", gap: 14, marginBottom: 40 }}>
               <button onClick={() => setShowApptModal(true)} style={{ padding: "16px 32px", background: "linear-gradient(135deg, #2d8cf0, #1e6dd4)", color: "white", border: "none", borderRadius: 12, fontSize: 15, fontWeight: 600, cursor: "pointer", fontFamily: "inherit", boxShadow: "0 4px 20px rgba(45,140,240,0.35)" }}>
                 Request an Appointment
               </button>
@@ -1271,7 +1303,7 @@ export default function DrFanaeeSite() {
                 {PHONE}
               </a>
             </div>
-            <div style={{ display: "flex", gap: 28 }}>
+            <div className="hero-stats" style={{ display: "flex", gap: 28 }}>
               {[{ l: "Board Certified", v: "Pain Medicine & Anesthesiology" }, { l: "Training", v: "U of Chicago · NYU Langone" }, { l: "Serving Long Island", v: "Since 2013" }].map((s, i) => (
                 <div key={i} style={{ borderLeft: i > 0 ? "1px solid rgba(255,255,255,0.08)" : "none", paddingLeft: i > 0 ? 28 : 0 }}>
                   <div style={{ fontSize: 10, color: "rgba(255,255,255,0.35)", textTransform: "uppercase", letterSpacing: "1px", fontWeight: 500 }}>{s.l}</div>
@@ -1283,7 +1315,7 @@ export default function DrFanaeeSite() {
 
           {/* Hero right - headshot placeholder */}
           <div style={{ display: "flex", justifyContent: "center", animation: "fadeInUp 1s ease 0.2s both" }}>
-            <div style={{ width: 380, height: 440, borderRadius: 24, background: "#0f2340", position: "relative", overflow: "hidden" }}>
+            <div className="hero-image-container" style={{ width: 380, height: 440, borderRadius: 24, background: "#0f2340", position: "relative", overflow: "hidden" }}>
               {/* Carousel images */}
               {heroImages.map((img, i) => (
                 <img key={i} src={img.src} alt={img.alt} style={{
@@ -1324,7 +1356,7 @@ export default function DrFanaeeSite() {
       </section>
 
       {/* ===== CONDITIONS ===== */}
-      <section id="services" style={{ padding: "100px 32px", background: "#f8fafb" }}>
+      <section id="services" className="section-padding" style={{ padding: "100px 32px", background: "#f8fafb" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 56 }}>
             <SectionLabel text="What We Treat" />
@@ -1333,7 +1365,7 @@ export default function DrFanaeeSite() {
               Comprehensive pain management for acute and chronic conditions affecting the spine, joints, and nervous system.
             </p>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }}>
+          <div className="conditions-grid" className="providers-other-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }}>
             {CONDITIONS.map((c, i) => (
               <div key={i} style={{ background: "white", borderRadius: 14, padding: "24px 20px", boxShadow: "0 1px 4px rgba(0,0,0,0.04)", border: "1px solid #eef2f6", transition: "all 0.3s", cursor: "default" }}
                 onMouseOver={e => { e.currentTarget.style.transform = "translateY(-4px)"; e.currentTarget.style.boxShadow = "0 8px 24px rgba(0,0,0,0.06)"; e.currentTarget.style.borderColor = "rgba(45,140,240,0.2)"; }}
@@ -1348,13 +1380,13 @@ export default function DrFanaeeSite() {
       </section>
 
       {/* ===== TREATMENTS ===== */}
-      <section style={{ padding: "100px 32px", background: "#0a192f" }}>
+      <section className="section-padding" style={{ padding: "100px 32px", background: "#0a192f" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 56 }}>
             <SectionLabel text="How We Help" light />
             <SectionTitle light>Interventional Services</SectionTitle>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 16 }}>
+          <div className="treatments-grid" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 16 }}>
             {TREATMENTS.map((t, i) => (
               <div key={i} style={{ background: "rgba(255,255,255,0.03)", borderRadius: 14, padding: "24px 28px", border: "1px solid rgba(255,255,255,0.06)", transition: "all 0.3s", cursor: "pointer" }}
                 onMouseOver={e => { e.currentTarget.style.background = "rgba(255,255,255,0.06)"; e.currentTarget.style.borderColor = "rgba(45,140,240,0.2)"; }}
@@ -1377,15 +1409,15 @@ export default function DrFanaeeSite() {
       </section>
 
       {/* ===== PROVIDERS ===== */}
-      <section id="providers" style={{ padding: "100px 32px", background: "#f8fafb" }}>
+      <section id="providers" className="section-padding" style={{ padding: "100px 32px", background: "#f8fafb" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 56 }}>
             <SectionLabel text="Our Team" />
             <SectionTitle>Our Experienced Team</SectionTitle>
           </div>
           {/* Featured provider - Eric */}
-          <div style={{ background: "white", borderRadius: 20, overflow: "hidden", boxShadow: "0 2px 8px rgba(0,0,0,0.04)", border: "1px solid #eef2f6", marginBottom: 24, display: "grid", gridTemplateColumns: "280px 1fr", gap: 0 }}>
-            <div style={{ background: "linear-gradient(135deg, #0a192f, #1a365d)", display: "flex", alignItems: "center", justifyContent: "center", minHeight: 300 }}>
+          <div className="provider-featured" style={{ background: "white", borderRadius: 20, overflow: "hidden", boxShadow: "0 2px 8px rgba(0,0,0,0.04)", border: "1px solid #eef2f6", marginBottom: 24, display: "grid", gridTemplateColumns: "280px 1fr", gap: 0 }}>
+            <div className="provider-featured-photo" style={{ background: "linear-gradient(135deg, #0a192f, #1a365d)", display: "flex", alignItems: "center", justifyContent: "center", minHeight: 300 }}>
               <img src={IMG_ERIC} alt="Dr. Eric Fanaee" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center center" }} />
             </div>
             <div style={{ padding: "36px 40px" }}>
@@ -1393,7 +1425,7 @@ export default function DrFanaeeSite() {
               <h3 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 30, color: "#0a192f", marginBottom: 4 }}>Eric Fanaee, MD</h3>
               <div style={{ fontSize: 16, color: "#4a5a6d", marginBottom: 16, fontWeight: 500 }}>Board Certified in Pain Medicine & Anesthesiology · University of Chicago · NYU Langone</div>
               <p style={{ fontSize: 16, color: "#4a5a6d", lineHeight: 1.8, marginBottom: 20, fontWeight: 500 }}>{PROVIDERS[0].bio}</p>
-              <div style={{ display: "flex", gap: 8 }}>
+              <div className="credential-tags" style={{ display: "flex", gap: 8 }}>
                 {["Pain Medicine", "Anesthesiology", "Interventional Spine", "NYU Fellowship"].map(t => (
                   <span key={t} style={{ padding: "5px 12px", background: "#eef4fb", color: "#2d6a8a", fontSize: 11, fontWeight: 600, borderRadius: 6 }}>{t}</span>
                 ))}
@@ -1402,7 +1434,7 @@ export default function DrFanaeeSite() {
           </div>
 
           {/* Other providers */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }}>
+          <div className="conditions-grid" className="providers-other-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }}>
             {PROVIDERS.slice(1).map((p, i) => (
               <div key={i} style={{ background: "white", borderRadius: 18, overflow: "hidden", boxShadow: "0 1px 4px rgba(0,0,0,0.04)", border: "1px solid #eef2f6", transition: "all 0.3s" }}
                 onMouseOver={e => { e.currentTarget.style.transform = "translateY(-4px)"; e.currentTarget.style.boxShadow = "0 12px 32px rgba(0,0,0,0.08)"; }}
@@ -1422,7 +1454,7 @@ export default function DrFanaeeSite() {
       </section>
 
       {/* ===== REVIEWS ===== */}
-      <section id="reviews" style={{ padding: "100px 32px", background: "white" }}>
+      <section id="reviews" className="section-padding" style={{ padding: "100px 32px", background: "white" }}>
         <div style={{ maxWidth: 800, margin: "0 auto", textAlign: "center" }}>
           <SectionLabel text="Patient Reviews" />
           <SectionTitle>What Our Patients Say</SectionTitle>
@@ -1448,13 +1480,13 @@ export default function DrFanaeeSite() {
       </section>
 
       {/* ===== LOCATIONS ===== */}
-      <section id="locations" style={{ padding: "100px 32px", background: "#f8fafb" }}>
+      <section id="locations" className="section-padding" style={{ padding: "100px 32px", background: "#f8fafb" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 56 }}>
             <SectionLabel text="Visit Us" />
             <SectionTitle>Conveniently Located Across Long Island</SectionTitle>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
+          <div className="locations-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
             {LOCATIONS.map((loc, i) => (
               <div key={i} style={{ background: "white", borderRadius: 18, overflow: "hidden", boxShadow: "0 1px 4px rgba(0,0,0,0.04)", border: "1px solid #eef2f6", transition: "all 0.3s" }}
                 onMouseOver={e => { e.currentTarget.style.transform = "translateY(-4px)"; e.currentTarget.style.boxShadow = "0 12px 32px rgba(0,0,0,0.08)"; }}
@@ -1501,7 +1533,7 @@ export default function DrFanaeeSite() {
               We accept most major insurance plans. Contact our office to verify your specific coverage.
             </p>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12, marginBottom: 32 }}>
+          <div className="insurance-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12, marginBottom: 32 }}>
             {["Medicare", "Aetna", "Blue Cross Blue Shield", "Cigna", "United Healthcare", "Oxford", "Humana", "Empire", "Fidelis", "Healthfirst", "Magnacare", "Multiplan", "Workers' Compensation", "No-Fault / Motor Vehicle", "GHI / Emblem Health", "GHI-NYC", "NYSHIP", "UHC Community Plan", "Wellcare", "1199"].map((ins, i) => (
               <div key={i} style={{ padding: "14px 16px", background: "rgba(255,255,255,0.04)", borderRadius: 10, border: "1px solid rgba(255,255,255,0.06)", fontSize: 15, color: "rgba(255,255,255,0.9)", fontWeight: 600, textAlign: "center" }}>
                 {ins}
@@ -1515,7 +1547,7 @@ export default function DrFanaeeSite() {
       </section>
 
       {/* ===== FAQ (SEO + AI) ===== */}
-      <section id="faq" style={{ padding: "100px 32px", background: "white" }}>
+      <section id="faq" className="section-padding" style={{ padding: "100px 32px", background: "white" }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 56 }}>
             <SectionLabel text="Questions" />
@@ -1538,14 +1570,14 @@ export default function DrFanaeeSite() {
       {/* ===== BLOG PREVIEW ===== */}
       <section style={{ padding: "80px 32px", background: "white" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 32 }}>
+          <div className="blog-preview-header" style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 32 }}>
             <div>
               <SectionLabel text="Insights" />
               <SectionTitle>From Our Blog</SectionTitle>
             </div>
             <button onClick={() => { setShowBlogIndex(true); window.scrollTo(0, 0); }} style={{ fontSize: 14, color: "#2d8cf0", fontWeight: 600, background: "none", border: "none", cursor: "pointer", fontFamily: "inherit" }}>View all articles →</button>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
+          <div className="blog-preview-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
             {publishedPosts.slice(0, 3).map((post, i) => (
               <div key={i} onClick={() => { setActiveBlog(post); window.scrollTo(0, 0); }} style={{ background: "#f8fafb", borderRadius: 16, overflow: "hidden", cursor: "pointer", transition: "all 0.3s", border: "1px solid #eef2f6" }}
                 onMouseOver={e => { e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.boxShadow = "0 8px 24px rgba(0,0,0,0.06)"; }}
@@ -1568,7 +1600,7 @@ export default function DrFanaeeSite() {
         <div style={{ maxWidth: 700, margin: "0 auto", textAlign: "center" }}>
           <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 36, color: "white", marginBottom: 14 }}>Ready to Start Feeling Better?</h2>
           <p style={{ fontSize: 16, color: "rgba(255,255,255,0.5)", marginBottom: 32 }}>Take the first step toward pain relief. Request an appointment or call us today.</p>
-          <div style={{ display: "flex", gap: 14, justifyContent: "center" }}>
+          <div className="cta-buttons" style={{ display: "flex", gap: 14, justifyContent: "center" }}>
             <button onClick={() => setShowApptModal(true)} style={{ padding: "16px 36px", background: "#2d8cf0", color: "white", border: "none", borderRadius: 12, fontSize: 16, fontWeight: 600, cursor: "pointer", fontFamily: "inherit", boxShadow: "0 4px 20px rgba(45,140,240,0.35)" }}>Request an Appointment</button>
             <a href={`tel:${PHONE.replace(/-/g,"")}`} style={{ padding: "16px 28px", color: "white", border: "1px solid rgba(255,255,255,0.2)", borderRadius: 12, fontSize: 16, fontWeight: 600, textDecoration: "none", display: "flex", alignItems: "center", gap: 8 }}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -1580,7 +1612,7 @@ export default function DrFanaeeSite() {
 
       {/* ===== FOOTER ===== */}
       <footer style={{ padding: "48px 32px 24px", background: "#060d18" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: 40, marginBottom: 40 }}>
+        <div className="footer-grid" style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: 40, marginBottom: 40 }}>
           <div>
             <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 20, color: "white", marginBottom: 8 }}>Eric Fanaee, MD</div>
             <div style={{ fontSize: 12, color: "rgba(255,255,255,0.3)", lineHeight: 1.6, maxWidth: 280 }}>Board-certified Pain Medicine and Anesthesiology. At the forefront of interventional pain management on Long Island.</div>
@@ -1624,7 +1656,7 @@ export default function DrFanaeeSite() {
                 {inp("name", "Full Name", "text", "John Smith", true)}
                 {inp("phone", "Phone Number", "tel", "(631) 555-1234", true)}
                 {inp("email", "Email", "email", "john@email.com")}
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 16 }}>
+                <div className="appt-form-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 16 }}>
                   <div>
                     <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "#0a192f", marginBottom: 6 }}>Preferred Location</label>
                     <select value={apptForm.location} onChange={e => setApptForm(p => ({ ...p, location: e.target.value }))} style={{ width: "100%", padding: "12px 16px", border: "1.5px solid #e2e8f0", borderRadius: 10, fontSize: 14, fontFamily: "inherit", background: "white" }}>
