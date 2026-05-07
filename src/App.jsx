@@ -11,6 +11,7 @@ const IMG_PROCEDURE = "/images/procedure.jpg";
 
 
 const PHONE = "631-265-2020";
+const API_BASE = "https://web-production-ad8a2.up.railway.app";
 const GOOGLE_API_KEY = "AIzaSyCh0-HapCkZHkzgLQ7tpMDUm5WIdSMZwSU";
 const GOOGLE_PLACE_IDS = {
   "west-islip": "ChIJKSsKVgEt6IkRNsgH91-iCZo",
