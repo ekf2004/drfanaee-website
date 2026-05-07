@@ -1109,6 +1109,29 @@ export default function DrFanaeeSite() {
   }).sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
   const [apptForm, setApptForm] = useState({ name: "", phone: "", email: "", location: "", reason: "", new_patient: "" });
   const [formSubmitted, setFormSubmitted] = useState(false);
+
+  const handleApptSubmit = async () => {
+    if (!apptForm.name || !apptForm.phone) return;
+    try {
+      const res = await fetch(`${API_BASE}/api/appointment-request`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: apptForm.name,
+          phone: apptForm.phone,
+          email: apptForm.email || null,
+          location: apptForm.location || null,
+          new_patient: apptForm.new_patient || null,
+          reason: apptForm.reason || null,
+        }),
+      });
+      const data = await res.json();
+      setFormSubmitted(true);
+    } catch (err) {
+      console.error("Appointment submission error:", err);
+      setFormSubmitted(true);
+    }
+  };
   const [activeReview, setActiveReview] = useState(0);
   const [liveReviews, setLiveReviews] = useState(null);
   const [liveRating, setLiveRating] = useState(4.9);
@@ -1825,7 +1848,15 @@ export default function DrFanaeeSite() {
                   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2d8cf0" strokeWidth="2.5"><polyline points="20 6 9 17 4 12"/></svg>
                 </div>
                 <h3 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 26, color: "#0a192f", marginBottom: 8 }}>Request Received</h3>
-                <p style={{ fontSize: 15, color: "#5a6b7d", lineHeight: 1.6, marginBottom: 28 }}>Thank you, {apptForm.name.split(" ")[0]}. Our team will call you at {apptForm.phone} to confirm your appointment.</p>
+                <p style={{ fontSize: 15, color: "#5a6b7d", lineHeight: 1.6, marginBottom: 20 }}>Thank you, {apptForm.name.split(" ")[0]}. Our team will call you at {apptForm.phone} to confirm your appointment.</p>
+                {apptForm.new_patient === "new" && (
+                  <div style={{ padding: "14px 18px", background: "#eff6ff", borderRadius: 10, marginBottom: 20, textAlign: "left" }}>
+                    <div style={{ fontSize: 13, fontWeight: 600, color: "#2563eb", marginBottom: 4 }}>📱 Check your phone!</div>
+                    <div style={{ fontSize: 13, color: "#5a6b7d", lineHeight: 1.6 }}>
+                      We just sent you a link to complete your new patient intake form. Filling it out ahead of time will speed up your first visit.
+                    </div>
+                  </div>
+                )}
                 <button onClick={() => { setShowApptModal(false); setFormSubmitted(false); setApptForm({ name: "", phone: "", email: "", location: "", reason: "", new_patient: "" }); }}
                   style={{ padding: "14px 28px", background: "#0a192f", color: "white", border: "none", borderRadius: 12, fontSize: 14, fontWeight: 600, cursor: "pointer", fontFamily: "inherit" }}>Done</button>
               </div>
