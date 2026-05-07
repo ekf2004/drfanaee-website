@@ -1686,21 +1686,16 @@ export default function DrFanaeeSite() {
               Follow @ericfanaeemd on Instagram
             </a>
           </div>
-          {/* Instagram embed will go here when API is connected */}
-          <div id="instagram-feed" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12, maxWidth: 800, margin: "0 auto" }}>
-            {[1,2,3,4].map(i => (
-              <a key={i} href="https://www.instagram.com/ericfanaeemd/" target="_blank" rel="noopener noreferrer"
-                style={{ aspectRatio: "1", background: "linear-gradient(135deg, #f0f4f8, #e2e8f0)", borderRadius: 12, display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden", transition: "all 0.3s" }}
-                onMouseOver={e => { e.currentTarget.style.transform = "scale(1.03)"; }} onMouseOut={e => { e.currentTarget.style.transform = ""; }}>
-                <div style={{ textAlign: "center", color: "#94a3b8" }}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="12" r="4"/></svg>
-                  <div style={{ fontSize: 10, marginTop: 4 }}>View on IG</div>
-                </div>
-              </a>
-            ))}
-          </div>
-          <div style={{ textAlign: "center", marginTop: 16, fontSize: 13, color: "#94a3b8" }}>
-            Live feed connects when Instagram API is configured
+          {/* Instagram Profile Embed */}
+          <div style={{ maxWidth: 540, margin: "0 auto", background: "white", borderRadius: 16, overflow: "hidden", border: "1px solid #eef2f6", boxShadow: "0 2px 8px rgba(0,0,0,0.04)" }}>
+            <iframe
+              src="https://www.instagram.com/ericfanaeemd/embed"
+              style={{ width: "100%", minHeight: 600, border: "none", overflow: "hidden" }}
+              scrolling="no"
+              allowTransparency={true}
+              loading="lazy"
+              title="@ericfanaeemd Instagram feed"
+            />
           </div>
         </div>
       </section>
