@@ -11,6 +11,11 @@ const IMG_PROCEDURE = "/images/procedure.jpg";
 
 
 const PHONE = "631-265-2020";
+const GOOGLE_API_KEY = "AIzaSyCh0-HapCkZHkzgLQ7tpMDUm5WIdSMZwSU";
+const GOOGLE_PLACE_IDS = {
+  "west-islip": "ChIJKSsKVgEt6IkRNsgH91-iCZo",
+  "smithtown": "ChIJa_o-WEwt6IkRja-AP4Jb618"
+};
 const FAX = "631-482-8766";
 const SITE_URL = "https://www.drfanaee.com";
 
@@ -29,18 +34,18 @@ const LOCATIONS = [
 ];
 
 const CONDITIONS = [
-  { name: "Back Pain", icon: "🦴", desc: "Chronic and acute lower back pain, lumbar disc disease, and spinal stenosis" },
-  { name: "Neck Pain", icon: "🔄", desc: "Cervical disc herniation, whiplash, cervical radiculopathy" },
-  { name: "Sciatica", icon: "⚡", desc: "Radiating leg pain from compressed lumbar nerve roots" },
-  { name: "Joint Pain", icon: "🦵", desc: "Knee, hip, shoulder, and sacroiliac joint conditions" },
-  { name: "Neuropathy", icon: "🔬", desc: "Peripheral neuropathy, diabetic nerve pain, nerve damage" },
-  { name: "Herniated Disc", icon: "💠", desc: "Cervical and lumbar disc herniations causing nerve compression" },
-  { name: "Arthritis Pain", icon: "🫱", desc: "Osteoarthritis, degenerative joint disease, inflammatory conditions" },
-  { name: "Migraines & Headaches", icon: "🧠", desc: "Chronic migraines, occipital neuralgia, cervicogenic headaches" },
-  { name: "Sports Injuries", icon: "🏃", desc: "Ligament sprains, muscle tears, overuse injuries" },
-  { name: "Post-Surgical Pain", icon: "🩹", desc: "Persistent pain following spine, joint, or other surgeries" },
-  { name: "Complex Regional Pain", icon: "🔥", desc: "CRPS Type I and II with advanced neuromodulation options" },
-  { name: "Compression Fractures", icon: "🦷", desc: "Vertebral compression fractures treated with kyphoplasty" },
+  { name: "Back Pain", icon: "back", desc: "Chronic and acute lower back pain, lumbar disc disease, and spinal stenosis" },
+  { name: "Neck Pain", icon: "neck", desc: "Cervical disc herniation, whiplash, cervical radiculopathy" },
+  { name: "Sciatica", icon: "sciatica", desc: "Radiating leg pain from compressed lumbar nerve roots" },
+  { name: "Joint Pain", icon: "joint", desc: "Knee, hip, shoulder, and sacroiliac joint conditions" },
+  { name: "Neuropathy", icon: "nerve", desc: "Peripheral neuropathy, diabetic nerve pain, nerve damage" },
+  { name: "Herniated Disc", icon: "disc", desc: "Cervical and lumbar disc herniations causing nerve compression" },
+  { name: "Arthritis Pain", icon: "arthritis", desc: "Osteoarthritis, degenerative joint disease, inflammatory conditions" },
+  { name: "Migraines & Headaches", icon: "headache", desc: "Chronic migraines, occipital neuralgia, cervicogenic headaches" },
+  { name: "Sports Injuries", icon: "sports", desc: "Ligament sprains, muscle tears, overuse injuries" },
+  { name: "Post-Surgical Pain", icon: "surgical", desc: "Persistent pain following spine, joint, or other surgeries" },
+  { name: "Complex Regional Pain", icon: "crps", desc: "CRPS Type I and II with advanced neuromodulation options" },
+  { name: "Compression Fractures", icon: "fracture", desc: "Vertebral compression fractures treated with kyphoplasty" },
 ];
 
 const TREATMENTS = [
@@ -63,10 +68,10 @@ const FAQS = [
   { q: "What should I expect at my first visit?", a: "Your first visit includes a thorough evaluation of your pain history, physical examination, and review of any imaging (MRI, X-ray, CT scan). Dr. Fanaee or one of our providers will discuss all available treatment options and develop a personalized care plan. Please bring your insurance card, photo ID, and any relevant medical records or imaging." },
   { q: "How long do procedures take?", a: "Most interventional procedures take just 5–10 minutes. With check-in, preparation, and recovery, plan for approximately 1–2 hours total. You will need someone to drive you home if sedation is used." },
   { q: "What insurance plans do you accept?", a: "We accept most major insurance plans including Medicare, Aetna, Blue Cross Blue Shield, Cigna, United Healthcare, Oxford, and many others. Contact our office to verify your specific plan." },
-  { q: "What areas of Long Island do you serve?", a: "We have three convenient office locations serving all of Long Island: West Islip (South Shore), Smithtown (North Shore/Suffolk County), and Bellmore (Nassau County). Procedures are performed at Good Samaritan Hospital in West Islip as well as our office-based surgical practice, which offers a more convenient and personalized experience for patients who prefer an alternative to a hospital setting." },
+  { q: "What areas of Long Island do you serve?", a: "We have three convenient office locations serving all of Long Island: West Islip (South Shore), Smithtown (North Shore/Suffolk County), and Bellmore (Nassau County). Procedures are performed at Good Samaritan Hospital in West Islip as well as our office-based surgical practice in Babylon, which offers a more convenient and personalized experience for patients who prefer an alternative to a hospital setting." },
   { q: "What is radiofrequency ablation and how long does it last?", a: "Radiofrequency ablation (RFA) uses controlled heat energy to disrupt the nerves that are transmitting pain signals. The procedure typically provides relief lasting 6 to 18 months. When pain returns, the procedure can be safely repeated." },
   { q: "Do you accept workers' compensation and no-fault insurance?", a: "Yes. We treat patients with workers' compensation and no-fault (motor vehicle accident) insurance at all three of our Long Island locations. Our team handles the authorization process and required documentation." },
-  { q: "Who is the best pain management doctor on Long Island?", a: "Dr. Eric Fanaee is a board-certified pain management specialist with fellowship training at NYU Langone Medical Center and residency training at the University of Chicago. With a 4.9-star rating across 634+ Google reviews and three convenient Long Island locations, Dr. Fanaee and his team provide advanced interventional pain management with sedation offered for all procedures. He has been serving Long Island since 2013." },
+  { q: "Why choose Dr. Fanaee and his team?", a: "Our patients consistently rate us among the top pain management practices on Long Island, with a 4.9-star average across 1,200+ reviews on Google and Healthgrades. Dr. Fanaee has been serving the Long Island community since 2013 — he and his family live here, and his focus is on providing the same quality of care to his neighbors that he would want for his own family. With fellowship training at NYU Langone, residency at the University of Chicago, and a team of five experienced providers across three convenient locations, we combine elite training with a genuine commitment to the community we serve." },
   { q: "Do you offer same-day or next-day appointments?", a: "We make every effort to see patients as quickly as possible. Same-day and next-day appointments are often available depending on the location and provider schedule. Call our office at 631-265-2020 or submit an online appointment request for the fastest response." },
 ];
 
@@ -885,11 +890,11 @@ const schemaData = {
   "@type": "MedicalBusiness",
   "name": "Eric Fanaee, MD – Pain Management",
   "alternateName": "Long Island Brain & Spine",
-  "description": "Board-certified interventional pain management physician serving Long Island, NY. University of Chicago residency trained, NYU Langone fellowship trained. Specializing in epidural steroid injections, radiofrequency ablation, spinal cord stimulation, Intracept procedure, kyphoplasty, nerve blocks, PRP therapy, and joint injections. Offices in West Islip, Smithtown, and Bellmore. Accepting Medicare, workers compensation, no-fault, and most major insurance. 4.9 stars with 634+ Google reviews. Sedation offered for all interventional procedures. Specializing in epidural injections, radiofrequency ablation, spinal cord stimulation, and minimally invasive spine procedures. Three locations: West Islip, Smithtown, and Bellmore.",
+  "description": "Board-certified interventional pain management physician serving Long Island, NY. University of Chicago residency trained, NYU Langone fellowship trained. Specializing in epidural steroid injections, radiofrequency ablation, spinal cord stimulation, Intracept procedure, kyphoplasty, nerve blocks, PRP therapy, and joint injections. Offices in West Islip, Smithtown, and Bellmore. Accepting Medicare, workers compensation, no-fault, and most major insurance. 4.9 stars with 1,200+ reviews on Google and Healthgrades. Sedation offered for all interventional procedures. Specializing in epidural injections, radiofrequency ablation, spinal cord stimulation, and minimally invasive spine procedures. Three locations: West Islip, Smithtown, and Bellmore.",
   "url": SITE_URL,
   "telephone": "+1-631-265-2020",
   "priceRange": "$$",
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "634", "bestRating": "5" },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1200", "bestRating": "5" },
   "medicalSpecialty": ["Pain Medicine", "Anesthesiology", "Interventional Pain Management"],
   "availableService": TREATMENTS.map(t => ({ "@type": "MedicalProcedure", "name": t.name, "description": t.desc })),
   "employee": PROVIDERS.map(p => ({ "@type": "Physician", "name": p.name, "description": p.role, "medicalSpecialty": "Pain Medicine" })),
@@ -913,6 +918,25 @@ const schemaData = {
 // ============================================================
 // COMPONENTS
 // ============================================================
+
+const MedicalIcon = ({ type, size = 28 }) => {
+  const s = { width: size, height: size, viewBox: "0 0 24 24", fill: "none", stroke: "#2d8cf0", strokeWidth: "1.8", strokeLinecap: "round", strokeLinejoin: "round" };
+  const icons = {
+    back: <svg {...s}><path d="M12 2v4M12 18v4"/><ellipse cx="12" cy="8" rx="4" ry="2"/><ellipse cx="12" cy="12" rx="3.5" ry="1.8"/><ellipse cx="12" cy="16" rx="3" ry="1.5"/></svg>,
+    neck: <svg {...s}><circle cx="12" cy="5" r="3"/><path d="M9 8v4c0 1 1 2 3 2s3-1 3-2V8"/><path d="M8 16h8"/><path d="M7 20h10"/></svg>,
+    sciatica: <svg {...s}><path d="M12 2v6"/><path d="M12 8c0 4-6 6-6 12"/><path d="M12 8c0 4 6 6 6 12"/><circle cx="12" cy="8" r="1.5" fill="#2d8cf0"/></svg>,
+    joint: <svg {...s}><circle cx="12" cy="8" r="4"/><circle cx="12" cy="18" r="3.5"/><path d="M10 11.5v3M14 11.5v3"/></svg>,
+    nerve: <svg {...s}><path d="M12 2v5"/><path d="M12 7l-4 4-3 2"/><path d="M12 7l4 4 3 2"/><path d="M12 7v5l-2 4"/><path d="M12 12l2 4"/><circle cx="12" cy="5" r="2" fill="#2d8cf0" stroke="none" opacity="0.3"/></svg>,
+    disc: <svg {...s}><ellipse cx="12" cy="8" rx="6" ry="2.5"/><ellipse cx="12" cy="12" rx="6" ry="2.5"/><ellipse cx="12" cy="16" rx="6" ry="2.5"/><circle cx="16" cy="12" r="1.5" fill="#dc2626" stroke="#dc2626" strokeWidth="1"/></svg>,
+    arthritis: <svg {...s}><path d="M9 22V12L6 8l1-4"/><path d="M15 22V12l3-4-1-4"/><circle cx="8" cy="12" r="1" fill="#2d8cf0"/><circle cx="16" cy="12" r="1" fill="#2d8cf0"/><circle cx="12" cy="10" r="1" fill="#2d8cf0"/></svg>,
+    headache: <svg {...s}><circle cx="12" cy="10" r="7"/><path d="M8 3l1 2M16 3l-1 2M5 8l2 1M19 8l-2 1M5 14l2-0.5M19 14l-2-0.5"/></svg>,
+    sports: <svg {...s}><circle cx="12" cy="5" r="3"/><path d="M12 8v5"/><path d="M12 13l-4 6"/><path d="M12 13l4 6"/><path d="M8 10l8 2"/></svg>,
+    surgical: <svg {...s}><path d="M8 4h8v4a4 4 0 01-8 0V4z"/><path d="M12 12v6"/><path d="M8 15h8"/><circle cx="12" cy="20" r="2"/></svg>,
+    crps: <svg {...s}><path d="M12 2c-3 4-6 6-6 10a6 6 0 0012 0c0-4-3-6-6-10z"/><path d="M12 8v4M10 10h4" stroke="#dc2626" strokeWidth="2"/></svg>,
+    fracture: <svg {...s}><rect x="8" y="3" width="8" height="6" rx="1"/><path d="M8 12h8" strokeDasharray="2 2"/><rect x="8" y="15" width="8" height="6" rx="1"/><path d="M10 9l-1 3h2l-1 3" stroke="#dc2626" strokeWidth="1.5"/></svg>,
+  };
+  return icons[type] || <svg {...s}><circle cx="12" cy="12" r="8"/></svg>;
+};
 
 const StarRow = ({ rating = 5, size = 16, color = "#f4b740" }) => (
   <div style={{ display: "flex", gap: 2 }}>
@@ -1062,7 +1086,7 @@ const ProcedurePage = ({ procedure, onBack, onSchedule }) => {
       {/* Trust bar */}
       <div style={{ padding: "20px 32px", background: "#060d18", display: "flex", justifyContent: "center", alignItems: "center", gap: 16 }}>
         <StarRow size={14} />
-        <span style={{ fontSize: 13, color: "rgba(255,255,255,0.4)" }}>4.9 out of 5 · 634 Google Reviews · Board Certified Pain Medicine & Anesthesiology · Since 2013</span>
+        <span style={{ fontSize: 13, color: "rgba(255,255,255,0.4)" }}>4.9 out of 5 · 1,200+ Reviews on Google & Healthgrades · Board Certified Pain Medicine & Anesthesiology · Since 2013</span>
       </div>
     </div>
   );
@@ -1085,6 +1109,9 @@ export default function DrFanaeeSite() {
   const [apptForm, setApptForm] = useState({ name: "", phone: "", email: "", location: "", reason: "", new_patient: "" });
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [activeReview, setActiveReview] = useState(0);
+  const [liveReviews, setLiveReviews] = useState(null);
+  const [liveRating, setLiveRating] = useState(4.9);
+  const [liveReviewCount, setLiveReviewCount] = useState(0);
   const [heroImage, setHeroImage] = useState(0);
   const heroImages = [
     { src: IMG_ERIC, alt: "Dr. Eric Fanaee - Pain Management Specialist", fit: "cover", position: "center center" },
@@ -1095,8 +1122,44 @@ export default function DrFanaeeSite() {
   const [openFaq, setOpenFaq] = useState(null);
 
   useEffect(() => {
-    const t = setInterval(() => setActiveReview(p => (p + 1) % REVIEWS.length), 5000);
+    const t = setInterval(() => setActiveReview(p => (p + 1) % (liveReviews || REVIEWS).length), 5000);
     const heroTimer = setInterval(() => setHeroImage(p => (p + 1) % 3), 5000);
+    
+    // Fetch live Google reviews
+    const fetchReviews = async () => {
+      try {
+        const placeIds = Object.values(GOOGLE_PLACE_IDS);
+        const allReviews = [];
+        for (const placeId of placeIds) {
+          const res = await fetch(
+            `https://places.googleapis.com/v1/places/${placeId}?fields=reviews,rating,userRatingCount&key=${GOOGLE_API_KEY}`,
+            { headers: { "X-Goog-FieldMask": "reviews,rating,userRatingCount" } }
+          );
+          if (res.ok) {
+            const data = await res.json();
+            if (data.reviews) {
+              allReviews.push(...data.reviews
+                .filter(r => r.rating >= 4)
+                .map(r => ({
+                  text: r.text?.text || "",
+                  author: r.authorAttribution?.displayName || "Google Review",
+                  rating: r.rating,
+                  time: r.relativePublishTimeDescription || ""
+                }))
+              );
+            }
+            if (data.rating) setLiveRating(data.rating);
+            if (data.userRatingCount) setLiveReviewCount(prev => prev + data.userRatingCount);
+          }
+        }
+        if (allReviews.length > 0) {
+          setLiveReviews(allReviews.sort(() => Math.random() - 0.5).slice(0, 8));
+        }
+      } catch (e) {
+        console.log("Using fallback reviews");
+      }
+    };
+    fetchReviews();
     const s = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", s);
     return () => { clearInterval(t); clearInterval(heroTimer); window.removeEventListener("scroll", s); };
@@ -1232,6 +1295,7 @@ export default function DrFanaeeSite() {
           .stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
           .footer-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
           .blog-preview-grid { grid-template-columns: 1fr !important; }
+          #instagram-feed { grid-template-columns: repeat(2, 1fr) !important; }
           .blog-preview-header { flex-direction: column !important; align-items: flex-start !important; gap: 8px !important; }
           .faq-container { padding: 60px 16px !important; }
           .section-title { font-size: 30px !important; }
@@ -1246,6 +1310,7 @@ export default function DrFanaeeSite() {
           .hero-img-1 { object-fit: contain !important; object-position: center center !important; background: #0f2340; }
           .hero-img-2 { object-fit: cover !important; object-position: center 30% !important; }
           .credential-tags { flex-wrap: wrap !important; }
+          .trust-bar { flex-direction: column !important; gap: 12px !important; text-align: center !important; }
           .since-2013 { font-size: 18px !important; }
           .hero-trust-badges { flex-wrap: wrap !important; gap: 16px !important; }
           .hero-trust-badges > div { padding-left: 0 !important; border-left: none !important; }
@@ -1274,6 +1339,10 @@ export default function DrFanaeeSite() {
               <a key={l} href={`#${l.toLowerCase()}`} onClick={(e) => { e.preventDefault(); if (l === "Blog") { setShowBlogIndex(true); setActiveProcedure(null); setActiveBlog(null); window.scrollTo(0, 0); } else { setShowBlogIndex(false); setActiveBlog(null); setActiveProcedure(null); document.getElementById(l.toLowerCase())?.scrollIntoView({ behavior: "smooth" }); } }} style={{ color: "rgba(255,255,255,0.65)", textDecoration: "none", fontSize: 13, fontWeight: 500, transition: "color 0.2s", cursor: "pointer" }}
                 onMouseOver={e => e.target.style.color = "white"} onMouseOut={e => e.target.style.color = "rgba(255,255,255,0.65)"}>{l}</a>
             ))}
+            <a href="https://www.instagram.com/ericfanaeemd/" target="_blank" rel="noopener noreferrer" style={{ color: "rgba(255,255,255,0.65)", display: "flex", alignItems: "center", transition: "color 0.2s" }}
+              onMouseOver={e => e.currentTarget.style.color = "#E1306C"} onMouseOut={e => e.currentTarget.style.color = "rgba(255,255,255,0.65)"}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
             <a href={`tel:${PHONE.replace(/-/g,"")}`} style={{ color: "rgba(255,255,255,0.65)", textDecoration: "none", fontSize: 13, fontWeight: 600, display: "flex", alignItems: "center", gap: 6 }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
               {PHONE}
@@ -1295,7 +1364,7 @@ export default function DrFanaeeSite() {
           <div style={{ animation: "fadeInUp 0.8s ease" }}>
             <div style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "6px 16px", background: "rgba(45,140,240,0.1)", borderRadius: 20, marginBottom: 24, border: "1px solid rgba(45,140,240,0.18)" }}>
               <StarRow size={12} />
-              <span style={{ color: "rgba(255,255,255,0.75)", fontSize: 12, fontWeight: 600, letterSpacing: "0.5px" }}>4.9 STARS · 634+ GOOGLE REVIEWS</span>
+              <span style={{ color: "rgba(255,255,255,0.75)", fontSize: 12, fontWeight: 600, letterSpacing: "0.5px" }}>4.9 STARS · 1,200+ REVIEWS ON GOOGLE & HEALTHGRADES</span>
             </div>
             <h1 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 54, fontWeight: 400, color: "white", lineHeight: 1.1, marginBottom: 12 }}>
               At the Forefront of<br/><span style={{ color: "#4da3ff" }}>Pain Medicine</span><br/><span className="since-2013" style={{ fontSize: 24, color: "rgba(255,255,255,0.4)" }}>Since 2013</span>
@@ -1347,12 +1416,36 @@ export default function DrFanaeeSite() {
               <div className="hero-floating-badge" style={{ position: "absolute", bottom: 20, left: 20, right: 20, background: "rgba(10,25,47,0.85)", backdropFilter: "blur(12px)", borderRadius: 14, padding: "14px 18px", border: "1px solid rgba(45,140,240,0.15)", display: "flex", alignItems: "center", justifyContent: "space-between", zIndex: 2 }}>
                 <div>
                   <StarRow size={14} />
-                  <div style={{ fontSize: 12, color: "rgba(255,255,255,0.6)", marginTop: 4 }}>634+ verified reviews</div>
+                  <div style={{ fontSize: 12, color: "rgba(255,255,255,0.6)", marginTop: 4 }}>1,200+ verified reviews</div>
                 </div>
                 <div style={{ fontSize: 28, fontWeight: 700, color: "#4da3ff" }}>4.9</div>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ===== TRUST BAR ===== */}
+      <section style={{ padding: "24px 32px", background: "white", borderBottom: "1px solid #eef2f6" }}>
+        <div className="trust-bar" style={{ maxWidth: 1200, margin: "0 auto", display: "flex", justifyContent: "center", alignItems: "center", gap: 40, flexWrap: "wrap" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+            <div style={{ display: "flex", gap: 2 }}>
+              {[1,2,3,4,5].map(i => <svg key={i} width={18} height={18} viewBox="0 0 24 24" fill="#f4b740"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>)}
+            </div>
+            <span style={{ fontSize: 16, fontWeight: 700, color: "#0a192f" }}>4.9 / 5</span>
+            <span style={{ fontSize: 14, color: "#5a6b7d", fontWeight: 500 }}>across 1,200+ reviews</span>
+          </div>
+          <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#4285f4"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/></svg>
+              <span style={{ fontSize: 13, fontWeight: 600, color: "#5a6b7d" }}>Google</span>
+            </div>
+            <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#00a98f"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6" stroke="white" strokeWidth="2" fill="none"/></svg>
+              <span style={{ fontSize: 13, fontWeight: 600, color: "#5a6b7d" }}>Healthgrades</span>
+            </div>
+          </div>
+          <div style={{ fontSize: 13, color: "#94a3b8", fontWeight: 500 }}>Board Certified · Since 2013 · 3 Long Island Locations</div>
         </div>
       </section>
 
@@ -1379,7 +1472,7 @@ export default function DrFanaeeSite() {
               <div key={i} style={{ background: "white", borderRadius: 14, padding: "24px 20px", boxShadow: "0 1px 4px rgba(0,0,0,0.04)", border: "1px solid #eef2f6", transition: "all 0.3s", cursor: "default" }}
                 onMouseOver={e => { e.currentTarget.style.transform = "translateY(-4px)"; e.currentTarget.style.boxShadow = "0 8px 24px rgba(0,0,0,0.06)"; e.currentTarget.style.borderColor = "rgba(45,140,240,0.2)"; }}
                 onMouseOut={e => { e.currentTarget.style.transform = ""; e.currentTarget.style.boxShadow = "0 1px 4px rgba(0,0,0,0.04)"; e.currentTarget.style.borderColor = "#eef2f6"; }}>
-                <div style={{ fontSize: 28, marginBottom: 10 }}>{c.icon}</div>
+                <div style={{ marginBottom: 10 }}><MedicalIcon type={c.icon} size={32} /></div>
                 <div style={{ fontSize: 17, fontWeight: 700, color: "#0a192f", marginBottom: 6 }}>{c.name}</div>
                 <div style={{ fontSize: 15, color: "#5a6b7d", lineHeight: 1.7, fontWeight: 500 }}>{c.desc}</div>
               </div>
@@ -1469,19 +1562,19 @@ export default function DrFanaeeSite() {
           <SectionTitle>What Our Patients Say</SectionTitle>
           <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: 8, margin: "12px 0 48px" }}>
             <StarRow size={20} />
-            <span style={{ fontSize: 14, color: "#5a6b7d", fontWeight: 500 }}>4.9 out of 5 · 634 reviews on Google</span>
+            <span style={{ fontSize: 14, color: "#5a6b7d", fontWeight: 500 }}>4.9 out of 5 · 1,200+ reviews on Google & Healthgrades</span>
           </div>
           <div style={{ position: "relative", minHeight: 160 }}>
-            {REVIEWS.map((r, i) => (
+            {(liveReviews || REVIEWS).map((r, i) => (
               <div key={i} style={{ position: i === activeReview ? "relative" : "absolute", top: 0, left: 0, right: 0, opacity: i === activeReview ? 1 : 0, transition: "opacity 0.5s", padding: "32px 40px", background: "#f8fafb", borderRadius: 20, border: "1px solid #eef2f6" }}>
                 <StarRow size={18} />
                 <p style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 26, color: "#0a192f", lineHeight: 1.6, marginTop: 16, fontStyle: "italic" }}>"{r.text}"</p>
-                <div style={{ fontSize: 13, color: "#94a3b8", marginTop: 16, fontWeight: 500 }}>— {r.author}</div>
+                <div style={{ fontSize: 13, color: "#94a3b8", marginTop: 16, fontWeight: 500 }}>— {r.author}{r.time ? ` · ${r.time}` : ""}</div>
               </div>
             ))}
           </div>
           <div style={{ display: "flex", justifyContent: "center", gap: 8, marginTop: 24 }}>
-            {REVIEWS.map((_, i) => (
+            {(liveReviews || REVIEWS).map((_, i) => (
               <button key={i} onClick={() => setActiveReview(i)} style={{ width: i === activeReview ? 24 : 8, height: 8, borderRadius: 4, border: "none", cursor: "pointer", background: i === activeReview ? "#2d8cf0" : "#d1d9e3", transition: "all 0.3s" }} />
             ))}
           </div>
@@ -1503,7 +1596,7 @@ export default function DrFanaeeSite() {
                 <div style={{ height: 180, position: "relative", overflow: "hidden" }}>
                   <iframe
                     title={`Map of ${loc.name} office`}
-                    src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${encodeURIComponent(loc.address + ", " + loc.city)}&zoom=15`}
+                    src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyCh0-HapCkZHkzgLQ7tpMDUm5WIdSMZwSU&q=${encodeURIComponent(loc.address + ", " + loc.city)}&zoom=15`}
                     style={{ width: "100%", height: "100%", border: "none" }}
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
@@ -1576,6 +1669,42 @@ export default function DrFanaeeSite() {
         </div>
       </section>
 
+      {/* ===== INSTAGRAM FEED ===== */}
+      <section className="section-padding" style={{ padding: "80px 32px", background: "#f8fafb" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+          <div style={{ textAlign: "center", marginBottom: 32 }}>
+            <SectionLabel text="Follow Us" />
+            <SectionTitle>@ericfanaeemd</SectionTitle>
+            <p style={{ fontSize: 16, color: "#4a5a6d", marginTop: 12, fontWeight: 500 }}>Follow us on Instagram for practice updates, patient education, and behind-the-scenes content.</p>
+          </div>
+          <div style={{ display: "flex", justifyContent: "center", marginBottom: 24 }}>
+            <a href="https://www.instagram.com/ericfanaeemd/" target="_blank" rel="noopener noreferrer" 
+              style={{ display: "inline-flex", alignItems: "center", gap: 10, padding: "14px 28px", background: "linear-gradient(135deg, #833AB4, #E1306C, #F77737)", color: "white", borderRadius: 12, fontSize: 15, fontWeight: 600, textDecoration: "none", boxShadow: "0 4px 16px rgba(225, 48, 108, 0.3)", transition: "all 0.3s" }}
+              onMouseOver={e => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 6px 20px rgba(225, 48, 108, 0.4)"; }}
+              onMouseOut={e => { e.currentTarget.style.transform = ""; e.currentTarget.style.boxShadow = "0 4px 16px rgba(225, 48, 108, 0.3)"; }}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              Follow @ericfanaeemd on Instagram
+            </a>
+          </div>
+          {/* Instagram embed will go here when API is connected */}
+          <div id="instagram-feed" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12, maxWidth: 800, margin: "0 auto" }}>
+            {[1,2,3,4].map(i => (
+              <a key={i} href="https://www.instagram.com/ericfanaeemd/" target="_blank" rel="noopener noreferrer"
+                style={{ aspectRatio: "1", background: "linear-gradient(135deg, #f0f4f8, #e2e8f0)", borderRadius: 12, display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden", transition: "all 0.3s" }}
+                onMouseOver={e => { e.currentTarget.style.transform = "scale(1.03)"; }} onMouseOut={e => { e.currentTarget.style.transform = ""; }}>
+                <div style={{ textAlign: "center", color: "#94a3b8" }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="12" r="4"/></svg>
+                  <div style={{ fontSize: 10, marginTop: 4 }}>View on IG</div>
+                </div>
+              </a>
+            ))}
+          </div>
+          <div style={{ textAlign: "center", marginTop: 16, fontSize: 13, color: "#94a3b8" }}>
+            Live feed connects when Instagram API is configured
+          </div>
+        </div>
+      </section>
+
       {/* ===== BLOG PREVIEW ===== */}
       <section style={{ padding: "80px 32px", background: "white" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
@@ -1640,6 +1769,11 @@ export default function DrFanaeeSite() {
             <div style={{ fontSize: 11, color: "rgba(255,255,255,0.25)", letterSpacing: "1.5px", textTransform: "uppercase", fontWeight: 600, marginBottom: 16 }}>Contact</div>
             <div style={{ color: "rgba(255,255,255,0.45)", fontSize: 13, marginBottom: 10 }}>Phone: {PHONE}</div>
             <div style={{ color: "rgba(255,255,255,0.45)", fontSize: 13, marginBottom: 10 }}>Fax: {FAX}</div>
+            <a href="https://www.instagram.com/ericfanaeemd/" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 6, color: "rgba(255,255,255,0.45)", fontSize: 13, textDecoration: "none", marginTop: 4 }}
+              onMouseOver={e => e.currentTarget.style.color = "#E1306C"} onMouseOut={e => e.currentTarget.style.color = "rgba(255,255,255,0.45)"}>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              @ericfanaeemd
+            </a>
           </div>
         </div>
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.05)", paddingTop: 20, textAlign: "center" }}>
