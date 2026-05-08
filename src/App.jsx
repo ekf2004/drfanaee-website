@@ -1840,7 +1840,7 @@ export default function DrFanaeeSite() {
                 <button onClick={handleApptSubmit} style={{ width: "100%", padding: "16px", background: (!apptForm.name || !apptForm.phone) ? "#e2e8f0" : "linear-gradient(135deg, #2d8cf0, #1e6dd4)", color: (!apptForm.name || !apptForm.phone) ? "#94a3b8" : "white", border: "none", borderRadius: 12, fontSize: 15, fontWeight: 600, cursor: (!apptForm.name || !apptForm.phone) ? "default" : "pointer", fontFamily: "inherit" }}>
                   Submit Request
                 </button>
-                <p style={{ fontSize: 11, color: "#94a3b8", textAlign: "center", marginTop: 12 }}>This is a request only. Our office will contact you to confirm your appointment.</p>
+                <p style={{ fontSize: 11, color: "#94a3b8", textAlign: "center", marginTop: 12, lineHeight: 1.6 }}>This is a request only. Our office will contact you to confirm your appointment. By submitting this form, you consent to receive text messages and emails from Dr. Eric Fanaee / Long Island Brain & Spine regarding your appointment. Message and data rates may apply. Reply STOP to opt out.</p>
               </div>
             ) : (
               <div style={{ padding: "48px 32px", textAlign: "center" }}>
