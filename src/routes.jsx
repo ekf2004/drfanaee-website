@@ -1,7 +1,10 @@
 import Home from './pages/Home.jsx'
 import TreatmentsIndex from './pages/TreatmentsIndex.jsx'
 import TreatmentDetail from './pages/TreatmentDetail.jsx'
+import ConditionsIndex from './pages/ConditionsIndex.jsx'
+import ConditionDetail from './pages/ConditionDetail.jsx'
 import { PROCEDURES } from './data/procedures.js'
+import { CONDITIONS } from './data/conditions.js'
 
 export const routes = [
   { path: '/', Component: Home },
@@ -13,7 +16,12 @@ export const routes = [
     Component: TreatmentDetail,
     getStaticPaths: () => PROCEDURES.map((p) => `/treatments/${p.slug}`),
   },
-  { path: '/conditions', Component: Home },
+  { path: '/conditions', Component: ConditionsIndex },
+  {
+    path: '/conditions/:slug',
+    Component: ConditionDetail,
+    getStaticPaths: () => CONDITIONS.map((c) => `/conditions/${c.slug}`),
+  },
   { path: '/locations/west-islip', Component: Home },
   { path: '/locations/smithtown', Component: Home },
   { path: '/locations/bellmore', Component: Home },

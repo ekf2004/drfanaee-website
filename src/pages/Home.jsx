@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { PROCEDURES } from "../data/procedures.js";
+import { CONDITIONS } from "../data/conditions.js";
 
 // Headshot images (base64 encoded)
 const IMG_ERIC = "/images/eric.jpg";
@@ -35,20 +36,6 @@ const LOCATIONS = [
   { name: "Bellmore", address: "250 Pettit Avenue, Suite 03", city: "Bellmore, NY 11710", phone: PHONE, hours: "Mon–Fri: 8:00 AM – 5:00 PM", lat: 40.6687, lng: -73.5271, nearby: "Serving Bellmore, Merrick, Wantagh, Seaford, Massapequa, and Nassau County" },
 ];
 
-const CONDITIONS = [
-  { name: "Back Pain", icon: "back", desc: "Chronic and acute lower back pain, lumbar disc disease, and spinal stenosis" },
-  { name: "Neck Pain", icon: "neck", desc: "Cervical disc herniation, whiplash, cervical radiculopathy" },
-  { name: "Sciatica", icon: "sciatica", desc: "Radiating leg pain from compressed lumbar nerve roots" },
-  { name: "Joint Pain", icon: "joint", desc: "Knee, hip, shoulder, and sacroiliac joint conditions" },
-  { name: "Neuropathy", icon: "nerve", desc: "Peripheral neuropathy, diabetic nerve pain, nerve damage" },
-  { name: "Herniated Disc", icon: "disc", desc: "Cervical and lumbar disc herniations causing nerve compression" },
-  { name: "Arthritis Pain", icon: "arthritis", desc: "Osteoarthritis, degenerative joint disease, inflammatory conditions" },
-  { name: "Migraines & Headaches", icon: "headache", desc: "Chronic migraines, occipital neuralgia, cervicogenic headaches" },
-  { name: "Sports Injuries", icon: "sports", desc: "Ligament sprains, muscle tears, overuse injuries" },
-  { name: "Post-Surgical Pain", icon: "surgical", desc: "Persistent pain following spine, joint, or other surgeries" },
-  { name: "Complex Regional Pain", icon: "crps", desc: "CRPS Type I and II with advanced neuromodulation options" },
-  { name: "Compression Fractures", icon: "fracture", desc: "Vertebral compression fractures treated with kyphoplasty" },
-];
 
 const TREATMENTS = [
   { name: "Epidural Steroid Injections", desc: "Targeted delivery of anti-inflammatory medication to reduce spinal nerve inflammation and relieve pain from herniated discs, spinal stenosis, and sciatica." },
