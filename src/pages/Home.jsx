@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { PROCEDURES } from "../data/procedures.js";
 
 // Headshot images (base64 encoded)
 const IMG_ERIC = "/images/eric.jpg";
@@ -698,190 +699,6 @@ const REVIEWS = [
   { text: "The entire staff is professional and caring. Best pain management practice on Long Island.", author: "Google Review", rating: 5 },
 ];
 
-const PROCEDURES = [
-  {
-    slug: "epidural-steroid-injections",
-    title: "Epidural Steroid Injections",
-    subtitle: "Targeted Relief for Spinal Pain",
-    metaDescription: "Epidural steroid injections for back pain, sciatica, and herniated discs on Long Island. Board-certified pain management at three convenient locations. Dr. Eric Fanaee.",
-    hero: "Epidural steroid injections (ESIs) are one of the most effective non-surgical treatments for back pain, neck pain, and sciatica caused by inflamed or compressed spinal nerves.",
-    overview: "An epidural steroid injection delivers a powerful anti-inflammatory medication directly into the epidural space surrounding the spinal nerves. By reducing inflammation at the source of pain, ESIs can provide significant relief for weeks to months — often enough to allow you to participate in physical therapy and rehabilitation.",
-    howItWorks: "Using real-time fluoroscopic (X-ray) guidance, Dr. Fanaee precisely places a thin needle into the epidural space near the affected nerve root. A contrast dye is injected first to confirm exact needle placement, followed by a combination of corticosteroid and local anesthetic. The entire procedure takes approximately 5–10 minutes. Sedation is available for patient comfort.",
-    conditions: ["Herniated or bulging discs", "Sciatica (lumbar radiculopathy)", "Spinal stenosis", "Degenerative disc disease", "Cervical radiculopathy (neck pain radiating to arms)", "Failed back surgery syndrome"],
-    types: ["Cervical epidural steroid injection (neck)", "Thoracic epidural steroid injection (mid-back)", "Lumbar epidural steroid injection (lower back)", "Caudal epidural steroid injection", "Transforaminal epidural steroid injection (selective nerve root block)"],
-    benefits: ["Non-surgical, outpatient procedure", "Takes only 5–10 minutes", "Rapid pain relief, often within days", "Allows participation in physical therapy", "Can be repeated if needed", "Sedation offered for all procedures"],
-    recovery: "Most patients can return to normal activities within 24–48 hours. You may experience temporary numbness at the injection site. Pain relief typically begins within 2–7 days as the steroid takes full effect. We recommend avoiding strenuous activity for 24 hours after the procedure.",
-    faqs: [
-      { q: "How long does an epidural steroid injection last?", a: "Relief from an epidural steroid injection typically lasts 2 weeks to 6 months, depending on the underlying condition. Some patients experience longer-lasting relief, especially when combined with physical therapy." },
-      { q: "How many epidural injections can I have?", a: "Most physicians recommend no more than 3–4 epidural steroid injections per year in the same area. Dr. Fanaee evaluates each patient individually to determine the appropriate treatment frequency." },
-      { q: "Is an epidural steroid injection painful?", a: "The procedure itself involves minimal discomfort. A local anesthetic numbs the skin before the injection. Dr. Fanaee also offers sedation for all interventional procedures to ensure maximum comfort." },
-      { q: "What is the difference between an epidural and a nerve block?", a: "An epidural steroid injection delivers medication into the epidural space, which can affect multiple nerve roots. A selective nerve block targets a single specific nerve. Dr. Fanaee determines which approach is best based on your imaging and symptoms." },
-    ]
-  },
-  {
-    slug: "radiofrequency-ablation",
-    title: "Radiofrequency Ablation (RFA)",
-    subtitle: "Long-Lasting Pain Relief",
-    metaDescription: "Radiofrequency ablation for chronic back pain and neck pain on Long Island. Provides 6–18 months of relief. Board-certified pain management specialist Dr. Eric Fanaee.",
-    hero: "Radiofrequency ablation (RFA) uses controlled heat energy to disrupt the nerves responsible for transmitting pain signals, providing long-lasting relief for chronic neck and back pain.",
-    overview: "RFA is an advanced interventional technique for patients with chronic pain that has responded positively to diagnostic nerve blocks. By using radiofrequency energy to heat and disable specific pain-transmitting nerves, RFA can provide relief lasting 6 to 18 months — significantly longer than steroid injections alone.",
-    howItWorks: "Under fluoroscopic guidance, Dr. Fanaee positions a specialized radiofrequency needle adjacent to the target nerve. The needle tip is heated using radiofrequency energy, creating a small lesion that disrupts the nerve's ability to transmit pain signals. The procedure takes approximately 5–10 minutes per level treated. A diagnostic medial branch block is typically performed first to confirm the pain source before proceeding with ablation.",
-    conditions: ["Chronic facet joint pain (neck and back)", "Sacroiliac (SI) joint pain", "Cervical facet arthropathy", "Lumbar facet arthropathy", "Chronic pain unresponsive to steroid injections", "Pain confirmed by positive diagnostic nerve blocks"],
-    types: ["Cervical radiofrequency ablation (neck)", "Lumbar radiofrequency ablation (lower back)", "Sacroiliac joint radiofrequency ablation", "Cooled radiofrequency ablation", "Pulsed radiofrequency"],
-    benefits: ["Long-lasting relief: 6–18 months typical", "Minimally invasive, outpatient procedure", "5–10 minute procedure time", "Can be safely repeated when pain returns", "Reduces or eliminates need for pain medication", "Sedation offered for all procedures"],
-    recovery: "Patients may experience mild soreness at the treatment site for 1–2 weeks as the area heals. Full pain relief typically develops within 2–4 weeks. Most patients return to normal activities within a few days. The treated nerves will eventually regenerate, at which point the procedure can be repeated.",
-    faqs: [
-      { q: "How long does radiofrequency ablation last?", a: "RFA typically provides pain relief for 6 to 18 months. When the treated nerves regenerate and pain returns, the procedure can be safely repeated with similar results." },
-      { q: "What is the success rate of radiofrequency ablation?", a: "Studies show that RFA provides significant pain relief in approximately 70–80% of properly selected patients — those who have had a positive response to diagnostic nerve blocks." },
-      { q: "Is radiofrequency ablation permanent?", a: "RFA is not permanent. The treated nerves typically regenerate over 6–18 months. However, the procedure can be repeated, and many patients undergo RFA multiple times with consistent results." },
-      { q: "What is the difference between RFA and a nerve block?", a: "A nerve block temporarily numbs a nerve using an anesthetic (lasting hours to days). RFA uses heat to disable the nerve for months, providing much longer-lasting relief. Diagnostic nerve blocks are often used first to confirm that RFA will be effective." },
-    ]
-  },
-  {
-    slug: "spinal-cord-stimulation",
-    title: "Spinal Cord Stimulation",
-    subtitle: "Advanced Neuromodulation for Chronic Pain",
-    metaDescription: "Spinal cord stimulation for chronic pain on Long Island. Advanced neuromodulation therapy for back pain, leg pain, and CRPS. Dr. Eric Fanaee, board-certified pain specialist.",
-    hero: "Spinal cord stimulation (SCS) is an advanced pain management therapy that uses a small implanted device to send mild electrical impulses to the spinal cord, interrupting pain signals before they reach the brain.",
-    overview: "SCS is designed for patients with chronic pain who have not found adequate relief from other treatments. A small pulse generator is implanted under the skin and connected to thin leads placed in the epidural space. The system delivers gentle electrical stimulation that replaces the sensation of pain with a mild tingling or, with newer technology, provides relief without any sensation at all.",
-    howItWorks: "Treatment begins with a trial period lasting 5–7 days, during which temporary leads are placed and connected to an external device. This allows you to experience the therapy in your daily life before committing to a permanent implant. If the trial provides significant relief (typically 50% or greater pain reduction), a permanent device is implanted in a brief outpatient procedure. Modern SCS systems are MRI-compatible, rechargeable, and can be adjusted via a handheld controller.",
-    conditions: ["Failed back surgery syndrome", "Complex regional pain syndrome (CRPS)", "Chronic radiculopathy (leg or arm pain)", "Peripheral neuropathy", "Chronic intractable back pain", "Arachnoiditis"],
-    types: ["Traditional spinal cord stimulation", "High-frequency stimulation (HF10)", "Burst stimulation", "Dorsal root ganglion (DRG) stimulation", "Closed-loop stimulation"],
-    benefits: ["Trial period before permanent implantation", "Reversible — can be removed if needed", "Reduces reliance on pain medications", "Adjustable settings for personalized relief", "MRI-compatible modern devices", "Significant improvement in quality of life"],
-    recovery: "After the trial, you'll return to the office to evaluate your results. If successful, permanent implantation is typically performed within a few weeks. Recovery from permanent implantation takes 2–4 weeks, during which you should avoid bending, twisting, and heavy lifting. Most patients return to normal activities within 4–6 weeks.",
-    faqs: [
-      { q: "What does spinal cord stimulation feel like?", a: "Traditional SCS produces a mild tingling sensation (paresthesia) that replaces the feeling of pain. Newer high-frequency and burst stimulation technologies provide pain relief without any tingling sensation." },
-      { q: "Is spinal cord stimulation covered by insurance?", a: "Yes, most major insurance plans including Medicare cover spinal cord stimulation when medically necessary. Our office handles pre-authorization and works directly with your insurance provider." },
-      { q: "Can I have an MRI with a spinal cord stimulator?", a: "Most modern SCS devices are MRI-compatible under certain conditions. Dr. Fanaee uses FDA-approved MRI-conditional systems. Your device's specific MRI compatibility will be discussed during your consultation." },
-      { q: "What is the trial period for spinal cord stimulation?", a: "Before permanent implantation, you undergo a 5–7 day trial where temporary leads are placed. This allows you to test the therapy during your daily activities. A successful trial typically means 50% or greater pain reduction." },
-    ]
-  },
-  {
-    slug: "intracept-procedure",
-    title: "Intracept® Procedure",
-    subtitle: "Targeting the Source of Chronic Low Back Pain",
-    metaDescription: "Intracept procedure for chronic low back pain on Long Island. FDA-cleared minimally invasive treatment targeting the basivertebral nerve. Dr. Eric Fanaee, pain management specialist.",
-    hero: "The Intracept® procedure is an FDA-cleared, minimally invasive treatment that targets the basivertebral nerve — a previously undertreated source of chronic low back pain.",
-    overview: "Many patients with chronic low back pain have vertebrogenic pain, meaning the pain originates from within the vertebral bones themselves. The basivertebral nerve (BVN) transmits pain signals from damaged vertebral endplates, often associated with Modic changes seen on MRI. The Intracept procedure uses radiofrequency energy to ablate the BVN, addressing the root cause of this specific type of back pain.",
-    howItWorks: "Under fluoroscopic guidance, Dr. Fanaee advances a specialized curved probe through the pedicle of the vertebral body to reach the basivertebral nerve at the center of the vertebra. Radiofrequency energy is then applied to ablate the nerve, permanently disrupting its ability to transmit pain signals. The procedure typically takes 30–60 minutes and is performed on an outpatient basis with sedation.",
-    conditions: ["Chronic low back pain lasting 6+ months", "Vertebrogenic pain (pain from the vertebral body)", "Modic Type 1 or Type 2 changes on MRI", "Pain unresponsive to conservative treatment (physical therapy, medications, injections)", "Patients seeking a non-fusion surgical option"],
-    types: [],
-    benefits: ["FDA-cleared with Level I evidence (randomized controlled trials)", "Targets the root cause of vertebrogenic pain", "Minimally invasive, implant-free", "Single outpatient procedure", "Durable long-term results (5+ year data)", "Preserves spinal mobility — no fusion required"],
-    recovery: "Most patients return to light activities within 1–2 weeks. Some temporary soreness at the treatment site is normal. Significant pain improvement typically develops over 2–6 weeks as post-procedure inflammation resolves. Long-term clinical studies show sustained pain relief at 5+ years following the procedure.",
-    faqs: [
-      { q: "What is the Intracept procedure?", a: "Intracept is an FDA-cleared, minimally invasive procedure that uses radiofrequency energy to ablate the basivertebral nerve inside the vertebral body. This nerve is responsible for transmitting chronic low back pain signals in patients with vertebrogenic pain. The procedure is implant-free and performed as an outpatient." },
-      { q: "How do I know if I'm a candidate for Intracept?", a: "Candidates typically have chronic low back pain lasting 6 or more months that hasn't responded to conservative treatments. An MRI showing Modic Type 1 or Type 2 endplate changes is a key indicator that vertebrogenic pain may be the source. Dr. Fanaee evaluates your MRI and clinical history to determine candidacy." },
-      { q: "How long does the Intracept procedure last?", a: "Clinical studies show durable pain relief lasting 5 or more years. Unlike nerve blocks or epidural injections, the Intracept procedure targets the nerve permanently, providing long-term results from a single procedure." },
-      { q: "Is Intracept covered by insurance?", a: "Many major insurance plans now cover the Intracept procedure, including Medicare. Coverage has expanded significantly as the clinical evidence supporting the procedure has grown. Our office verifies your insurance coverage and handles pre-authorization." },
-    ]
-  },
-  {
-    slug: "kyphoplasty",
-    title: "Kyphoplasty",
-    subtitle: "Treating Vertebral Compression Fractures",
-    metaDescription: "Kyphoplasty for vertebral compression fractures on Long Island. Minimally invasive treatment to relieve pain and restore vertebral height. Dr. Eric Fanaee.",
-    hero: "Kyphoplasty is a minimally invasive procedure that treats painful vertebral compression fractures by stabilizing the fractured vertebra and restoring vertebral body height.",
-    overview: "Vertebral compression fractures are common in patients with osteoporosis, cancer, or spinal trauma. These fractures cause severe back pain and can lead to progressive spinal deformity (kyphosis). Kyphoplasty addresses both the pain and the structural damage by first creating space within the collapsed vertebra using a balloon, then filling that space with bone cement to stabilize the fracture.",
-    howItWorks: "Under fluoroscopic guidance and sedation, Dr. Fanaee inserts a thin tube through a small incision into the fractured vertebral body. A specialized balloon (balloon tamp) is inflated inside the vertebra to restore its height and create a cavity. The balloon is then removed and medical-grade bone cement (PMMA) is injected into the cavity, where it hardens within minutes to stabilize the fracture. The procedure typically takes 30–45 minutes per level.",
-    conditions: ["Osteoporotic vertebral compression fractures", "Vertebral fractures from cancer or metastatic disease", "Painful compression fractures unresponsive to bracing and medication", "Progressive spinal deformity (kyphosis) from fractures"],
-    types: ["Balloon kyphoplasty", "Vertebroplasty (cement injection without balloon)"],
-    benefits: ["Rapid pain relief — often within 24–48 hours", "Restores vertebral body height", "Prevents progressive spinal deformity", "Minimally invasive, outpatient procedure", "Short recovery time", "Sedation provided for comfort"],
-    recovery: "Many patients experience significant pain relief within 24–48 hours of the procedure. You may have some soreness at the needle insertion site for a few days. Most patients can resume normal daily activities within 1–2 days. A follow-up appointment is scheduled to assess your healing and discuss osteoporosis management to prevent future fractures.",
-    faqs: [
-      { q: "What is the difference between kyphoplasty and vertebroplasty?", a: "Both procedures stabilize compression fractures with bone cement. Kyphoplasty uses a balloon to first restore vertebral height before injecting cement, potentially correcting spinal deformity. Vertebroplasty injects cement directly without a balloon. Dr. Fanaee typically recommends kyphoplasty for its ability to restore vertebral height." },
-      { q: "How soon will I feel better after kyphoplasty?", a: "Many patients experience significant pain relief within 24–48 hours. Some patients report immediate improvement upon standing after the procedure." },
-      { q: "Is kyphoplasty safe?", a: "Kyphoplasty is a well-established procedure with a strong safety profile. Serious complications are rare. The most common risk is a small cement leak outside the vertebral body, which rarely causes symptoms. Dr. Fanaee uses fluoroscopic guidance throughout the procedure to ensure precise cement placement." },
-    ]
-  },
-  {
-    slug: "nerve-blocks",
-    title: "Nerve Blocks",
-    subtitle: "Precision Pain Relief",
-    metaDescription: "Ultrasound and fluoroscopy-guided nerve blocks for chronic pain on Long Island. Precise, targeted pain relief. Dr. Eric Fanaee, board-certified pain management.",
-    hero: "Nerve blocks are precision injections that deliver anesthetic and anti-inflammatory medication directly to specific nerves, providing targeted relief for a wide range of pain conditions.",
-    overview: "A nerve block interrupts pain signals traveling along a specific nerve or group of nerves. By delivering medication directly to the source of pain, nerve blocks can provide rapid relief and help diagnose the exact cause of your symptoms. Nerve blocks serve both therapeutic and diagnostic purposes — they relieve pain and help determine whether a specific nerve is responsible for your symptoms.",
-    howItWorks: "Using ultrasound or fluoroscopic guidance for precision, Dr. Fanaee places a thin needle adjacent to the target nerve. A combination of local anesthetic and corticosteroid is injected to reduce inflammation and block pain signals. The procedure takes approximately 5–10 minutes. Image guidance ensures accuracy and safety.",
-    conditions: ["Occipital neuralgia (headaches)", "Intercostal neuralgia (rib pain)", "Trigeminal neuralgia (facial pain)", "Peripheral nerve entrapment", "Stellate ganglion block for CRPS and sympathetic pain", "Celiac plexus block for abdominal pain", "Genicular nerve block for knee pain"],
-    types: ["Stellate ganglion block", "Occipital nerve block", "Intercostal nerve block", "Peripheral nerve block", "Genicular nerve block", "Celiac plexus block", "Superior hypogastric plexus block", "Ganglion impar block"],
-    benefits: ["Rapid pain relief, often within minutes", "Diagnostic value — confirms pain source", "Minimally invasive, 5–10 minutes", "Ultrasound or fluoroscopy-guided precision", "Can be therapeutic and diagnostic", "Sedation offered for all procedures"],
-    recovery: "Most patients experience some relief immediately from the local anesthetic. The steroid component provides longer-lasting relief, typically peaking within 5–7 days. You may have temporary numbness in the treated area for several hours. Normal activities can usually be resumed the same day.",
-    faqs: [
-      { q: "How long does a nerve block last?", a: "The duration depends on the type of nerve block and the medications used. Diagnostic blocks using only local anesthetic last hours. Therapeutic blocks with corticosteroids can provide relief lasting weeks to months." },
-      { q: "What is the difference between a nerve block and an epidural?", a: "An epidural delivers medication into the space around the spinal cord and can affect multiple nerves. A nerve block targets a specific individual nerve or nerve group outside the spine. Dr. Fanaee determines which approach is best based on your condition." },
-    ]
-  },
-  {
-    slug: "prp-therapy",
-    title: "PRP Therapy",
-    subtitle: "Regenerative Medicine for Natural Healing",
-    metaDescription: "PRP therapy (platelet-rich plasma) for joint pain, tendon injuries, and arthritis on Long Island. Regenerative medicine using your body's own healing factors. Dr. Eric Fanaee.",
-    hero: "Platelet-rich plasma (PRP) therapy harnesses your body's own healing factors to promote tissue repair and reduce inflammation in damaged joints, tendons, and ligaments.",
-    overview: "PRP is a form of regenerative medicine that uses a concentrated preparation of your own blood platelets to accelerate healing. Platelets contain growth factors that play a crucial role in tissue repair. By concentrating these growth factors and injecting them directly into the injured area, PRP therapy can stimulate your body's natural healing response.",
-    howItWorks: "A small amount of your blood is drawn and placed in a centrifuge, which separates the platelet-rich plasma from other blood components. The concentrated PRP is then injected directly into the affected joint, tendon, or ligament under ultrasound guidance for precision. The entire process takes approximately 30–45 minutes from blood draw to injection.",
-    conditions: ["Knee osteoarthritis", "Rotator cuff tendinopathy", "Tennis elbow (lateral epicondylitis)", "Plantar fasciitis", "Hip bursitis", "Achilles tendinopathy", "Ligament sprains", "SI joint pain"],
-    types: ["Leukocyte-rich PRP (LR-PRP)", "Leukocyte-poor PRP (LP-PRP)", "Single-spin PRP", "Double-spin PRP"],
-    benefits: ["Uses your own blood — no risk of allergic reaction", "Non-surgical, minimally invasive", "Promotes natural tissue healing", "No steroid side effects", "Ultrasound-guided precision", "Can delay or prevent need for surgery"],
-    recovery: "You may experience mild soreness and swelling at the injection site for 3–5 days as the healing response begins. Avoid anti-inflammatory medications (ibuprofen, naproxen) for 1–2 weeks after the injection, as they can interfere with the healing process. Most patients see improvement within 4–6 weeks, with continued improvement over 3–6 months.",
-    faqs: [
-      { q: "Is PRP therapy covered by insurance?", a: "Most insurance plans do not currently cover PRP therapy, as it is still considered investigational by many carriers. Our office can provide detailed pricing information during your consultation." },
-      { q: "How many PRP treatments do I need?", a: "Many patients experience significant improvement after a single injection. Depending on the condition and severity, 1–3 treatments spaced 4–6 weeks apart may be recommended." },
-      { q: "Does PRP therapy actually work?", a: "Clinical research supports the effectiveness of PRP for specific conditions, particularly knee osteoarthritis and tendon injuries. Results vary by condition and individual. Dr. Fanaee evaluates whether PRP is appropriate for your specific situation." },
-    ]
-  },
-  {
-    slug: "joint-injections",
-    title: "Joint & Bursa Injections",
-    subtitle: "Targeted Joint Pain Relief",
-    metaDescription: "Ultrasound-guided joint injections for shoulder, hip, knee, and SI joint pain on Long Island. Precise, targeted pain relief. Dr. Eric Fanaee, pain management specialist.",
-    hero: "Ultrasound-guided joint and bursa injections deliver anti-inflammatory medication directly into painful joints, providing targeted relief for arthritis, bursitis, and other joint conditions.",
-    overview: "Joint injections are a cornerstone of pain management for conditions affecting the shoulders, hips, knees, sacroiliac joints, and other joints throughout the body. By delivering corticosteroids or hyaluronic acid directly into the affected joint under ultrasound guidance, these injections provide precise, targeted relief with minimal discomfort.",
-    howItWorks: "Using real-time ultrasound imaging, Dr. Fanaee or one of our providers visualizes the joint and guides a thin needle directly into the joint space or bursa. This image-guided approach ensures the medication reaches the exact target. A combination of corticosteroid and local anesthetic is typically injected. The procedure takes approximately 5–10 minutes.",
-    conditions: ["Knee osteoarthritis", "Shoulder impingement and bursitis", "Hip arthritis and trochanteric bursitis", "Sacroiliac (SI) joint dysfunction", "AC joint arthritis", "Ankle and foot joint pain", "Wrist and hand arthritis"],
-    types: ["Corticosteroid joint injection", "Hyaluronic acid (viscosupplementation)", "Sacroiliac joint injection", "Bursa injection (subacromial, trochanteric, pes anserine)", "Ultrasound-guided aspiration"],
-    benefits: ["Ultrasound-guided for maximum precision", "5–10 minute outpatient procedure", "Rapid pain relief", "Reduces inflammation at the source", "Can delay or prevent need for surgery", "Sedation available if needed"],
-    recovery: "Most patients can return to normal activities immediately. Some soreness at the injection site is normal for 1–2 days. The steroid typically takes 3–5 days to reach full effect. Avoid strenuous activity involving the treated joint for 24–48 hours.",
-    faqs: [
-      { q: "How long do joint injections last?", a: "Corticosteroid joint injections typically provide relief lasting 1–3 months. Hyaluronic acid injections (viscosupplementation) may provide relief lasting 6 months or longer. The duration varies based on the condition and individual response." },
-      { q: "Why is ultrasound guidance important for joint injections?", a: "Ultrasound allows the provider to visualize the joint in real time, ensuring the needle is placed precisely within the joint space. Studies show that ultrasound-guided injections are significantly more accurate than landmark-guided (blind) injections, resulting in better outcomes." },
-    ]
-  },
-  {
-    slug: "trigger-point-injections",
-    title: "Trigger Point Injections",
-    subtitle: "Relief for Muscle Pain and Tension",
-    metaDescription: "Trigger point injections for muscle pain, myofascial pain, and tension on Long Island. Quick, effective treatment for painful muscle knots. Dr. Eric Fanaee.",
-    hero: "Trigger point injections (TPIs) target painful knots in muscles — called myofascial trigger points — that can cause localized pain and referred pain in other parts of the body.",
-    overview: "Myofascial trigger points are tight bands of muscle fiber that form when muscles don't relax properly. These knots can cause local pain, referred pain patterns, and restricted range of motion. Trigger point injections deliver medication directly into the trigger point, releasing the muscle contraction and breaking the pain cycle.",
-    howItWorks: "Dr. Fanaee or one of our providers locates the trigger point by palpation and inserts a thin needle directly into the knot. A small amount of local anesthetic, corticosteroid, or simply a dry needle technique is used to inactivate the trigger point and release the muscle contraction. Multiple trigger points can be treated in a single session. The procedure takes approximately 5–10 minutes.",
-    conditions: ["Myofascial pain syndrome", "Chronic neck and shoulder tension", "Tension headaches", "Upper and lower back muscle pain", "Fibromyalgia-related muscle pain", "TMJ-related muscle pain"],
-    types: ["Local anesthetic trigger point injection", "Corticosteroid trigger point injection", "Dry needling", "Botox trigger point injection"],
-    benefits: ["Quick procedure — 5–10 minutes", "Immediate muscle tension relief", "Minimal recovery time", "Can treat multiple points in one visit", "Breaks the pain-spasm-pain cycle", "No sedation typically required"],
-    recovery: "Most patients experience immediate relief of muscle tension. Some soreness at the injection site is normal for 1–2 days. Stretching and heat application after the procedure can enhance the results. Normal activities can be resumed immediately.",
-    faqs: [
-      { q: "How often can I get trigger point injections?", a: "Trigger point injections can be repeated as needed, typically every 2–4 weeks. For chronic myofascial pain, a series of injections combined with physical therapy and stretching often provides the best long-term results." },
-      { q: "Are trigger point injections the same as dry needling?", a: "They are similar but not identical. Trigger point injections involve injecting medication (anesthetic and/or steroid) into the trigger point. Dry needling uses a needle without medication — the mechanical action of the needle itself helps release the muscle knot. Both techniques are effective." },
-    ]
-  },
-  {
-    slug: "chronic-pain-management",
-    title: "Chronic Pain Management",
-    subtitle: "Comprehensive, Multimodal Care",
-    metaDescription: "Comprehensive chronic pain management on Long Island. Multimodal treatment plans combining interventional procedures, medication management, and rehabilitation. Dr. Eric Fanaee.",
-    hero: "Chronic pain requires a comprehensive, multimodal approach. At Long Island Brain & Spine, we combine interventional procedures, medication management, physical therapy, and lifestyle strategies to help you regain control of your life.",
-    overview: "Living with chronic pain affects every aspect of your life — your ability to work, sleep, exercise, and enjoy time with family. Our approach goes beyond simply treating symptoms. We identify and address the underlying causes of your pain through a combination of the most effective, evidence-based treatments available.",
-    howItWorks: "Your treatment begins with a thorough evaluation including medical history, physical examination, review of imaging, and discussion of your goals. Dr. Fanaee and our team develop a personalized treatment plan that may include interventional procedures, carefully managed medications, physical therapy referrals, and lifestyle modifications. Your plan is continuously adjusted based on your progress.",
-    conditions: ["Chronic low back pain", "Chronic neck pain", "Failed back surgery syndrome", "Fibromyalgia", "Complex regional pain syndrome (CRPS)", "Chronic headaches and migraines", "Cancer-related pain", "Neuropathic pain", "Chronic joint pain"],
-    types: ["Interventional procedures (injections, ablations, stimulators)", "Medication management (non-opioid focused)", "Physical therapy coordination", "Medical marijuana certification (NY State)", "Referral coordination with surgeons and specialists"],
-    benefits: ["Individualized treatment plans", "Evidence-based, multimodal approach", "Focus on function and quality of life", "Non-opioid-first philosophy", "Coordination with your other healthcare providers", "Five experienced providers across three locations"],
-    recovery: "Chronic pain management is an ongoing relationship, not a single treatment. We schedule regular follow-up visits to assess your progress, adjust your treatment plan, and ensure you're meeting your functional goals. Many patients see significant improvement within the first few weeks of treatment.",
-    faqs: [
-      { q: "Do you prescribe opioids for chronic pain?", a: "Our approach emphasizes non-opioid treatments first, including interventional procedures, non-opioid medications, and physical therapy. When appropriate, opioid medications may be part of a comprehensive pain management plan, always with careful monitoring and in compliance with New York State regulations." },
-      { q: "Do you accept workers' compensation and no-fault cases?", a: "Yes, we treat patients with workers' compensation and no-fault insurance. Our team handles the authorization process and required documentation." },
-      { q: "Can you certify patients for medical marijuana?", a: "Yes, Dr. Fanaee is a certified medical marijuana prescriber in New York State. He evaluates whether medical marijuana may be appropriate as part of your overall pain management plan." },
-      { q: "What should I bring to my first appointment?", a: "Please bring your insurance card, photo ID, a list of current medications, and any relevant medical records or imaging (MRI, X-ray, CT scan). If your imaging is stored at a hospital or imaging center, you can request a CD or have the records sent to our office before your visit." },
-    ]
-  },
-];
 
 // ============================================================
 // SCHEMA.ORG STRUCTURED DATA (injected as JSON-LD)
@@ -961,7 +778,7 @@ const SectionTitle = ({ children, light = false }) => (
 // MAIN SITE
 // ============================================================
 
-const ProcedurePage = ({ procedure, onBack, onSchedule }) => {
+export const ProcedurePage = ({ procedure, onBack, onSchedule }) => {
   const [openFaq, setOpenFaq] = useState(null);
   const p = procedure;
 
