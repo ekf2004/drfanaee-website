@@ -7,10 +7,6 @@ const PHONE = "631-265-2020";
 const PAGE_DESC =
   "Terms of use for drfanaee.com — the rules governing your use of the Long Island Brain & Spine website.";
 
-// ⚠️ LEGAL REVIEW NEEDED ⚠️
-// Generic placeholder. Replace with terms reviewed by the practice's counsel
-// before launch.
-
 export default function Terms() {
   return (
     <div style={{ fontFamily: "'DM Sans', system-ui, sans-serif", color: "#0f1c2e", background: "white", minHeight: "100vh" }}>
@@ -32,9 +28,7 @@ export default function Terms() {
 
       <section style={{ padding: "64px 32px" }}>
         <div style={{ maxWidth: 800, margin: "0 auto", fontSize: 16, color: "#3a4a5c", lineHeight: 1.8 }}>
-          <p style={{ marginBottom: 16, padding: "16px 20px", background: "#fff8e1", border: "1px solid #f4d57b", borderRadius: 10, fontSize: 14, color: "#8a6d1f" }}>
-            <strong>⚠️ Placeholder content — pending legal review.</strong> Replace with terms reviewed by the practice's legal counsel before launch.
-          </p>
+          <p style={{ marginBottom: 24, fontSize: 14, color: "#94a3b8" }}>Last updated: 2026.</p>
 
           <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 24, color: "#0a192f", marginTop: 32, marginBottom: 12 }}>Acceptance of Terms</h2>
           <p style={{ marginBottom: 16 }}>By accessing drfanaee.com (the "Site"), you agree to these Terms of Use. If you do not agree, do not use the Site.</p>

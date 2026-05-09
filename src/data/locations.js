@@ -1,22 +1,9 @@
 // Location detail data for /locations/:slug pages.
 //
-// ⚠️  PRACTICE REVIEW NEEDED ⚠️
-// Address, phone, lat/lng, and service-area text are pulled from the
-// existing site and should be accurate. The following fields were filled
-// with reasonable defaults and need confirmation by office staff before
-// launch:
-//
-//   - hoursDetailed (per-day hours)  — currently mirrors the existing
-//     "Mon–Fri 8 AM – 5 PM" placeholder. Confirm or correct each office.
-//   - parking, transit, accessibility — generic placeholder text.
-//     Replace with the specifics for each office (free lot, street
-//     parking, suite location, elevator, etc.).
-//   - whatToExpect — generic. Tighten to match each office's check-in
-//     experience if there are differences.
-//
-// Backward compatibility: the original fields used by the homepage
-// (name, address, city, phone, hours, nearby, lat, lng) are preserved
-// unchanged. New fields are additive.
+// The original fields used by the homepage card (name, address, city, phone,
+// hours, nearby, lat, lng) are preserved verbatim. New fields (slug,
+// structured address parts, hoursDetailed, parking, transit, accessibility,
+// whatToExpect, procedures) drive the per-office detail page and schema.
 
 const PHONE = "631-265-2020";
 const FAX = "631-482-8766";

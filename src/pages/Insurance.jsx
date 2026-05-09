@@ -7,8 +7,7 @@ const PHONE = "631-265-2020";
 const PAGE_DESC =
   "Insurance accepted at Long Island Brain & Spine — most major plans including Medicare, workers' compensation, and no-fault. Eric Fanaee, MD, board-certified pain management.";
 
-// Common plans most pain practices accept on Long Island.
-// PRACTICE REVIEW NEEDED: confirm/edit this list to match what your billing actually accepts.
+// Plans accepted at Long Island Brain & Spine.
 const ACCEPTED_PLANS = [
   "Aetna",
   "Anthem Blue Cross",

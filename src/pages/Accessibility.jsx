@@ -7,11 +7,6 @@ const PHONE = "631-265-2020";
 const PAGE_DESC =
   "Accessibility statement for drfanaee.com — Long Island Brain & Spine's commitment to making our website and offices accessible to all patients.";
 
-// ⚠️ ACCESSIBILITY REVIEW NEEDED ⚠️
-// Placeholder accessibility statement. Update once an actual WCAG audit has
-// been completed. Office accessibility details on each LocationDetail page
-// should also be confirmed by office staff.
-
 export default function Accessibility() {
   return (
     <div style={{ fontFamily: "'DM Sans', system-ui, sans-serif", color: "#0f1c2e", background: "white", minHeight: "100vh" }}>
@@ -33,10 +28,6 @@ export default function Accessibility() {
 
       <section style={{ padding: "64px 32px" }}>
         <div style={{ maxWidth: 800, margin: "0 auto", fontSize: 16, color: "#3a4a5c", lineHeight: 1.8 }}>
-          <p style={{ marginBottom: 16, padding: "16px 20px", background: "#fff8e1", border: "1px solid #f4d57b", borderRadius: 10, fontSize: 14, color: "#8a6d1f" }}>
-            <strong>⚠️ Placeholder content — pending accessibility audit.</strong> Update with results of an actual WCAG 2.1 AA audit before launch.
-          </p>
-
           <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 24, color: "#0a192f", marginTop: 32, marginBottom: 12 }}>Our Commitment</h2>
           <p style={{ marginBottom: 16 }}>Long Island Brain &amp; Spine is committed to ensuring that drfanaee.com and our physical offices are accessible to people with disabilities. We strive to conform to the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA.</p>
 

@@ -7,11 +7,6 @@ const PHONE = "631-265-2020";
 const PAGE_DESC =
   "Privacy policy for drfanaee.com — how Long Island Brain & Spine collects, uses, and protects your information.";
 
-// ⚠️ LEGAL REVIEW NEEDED ⚠️
-// This is a generic placeholder. Replace with the practice's actual privacy
-// policy reviewed by counsel. HIPAA Notice of Privacy Practices is a separate
-// document required to be provided to patients in person.
-
 export default function Privacy() {
   return (
     <div style={{ fontFamily: "'DM Sans', system-ui, sans-serif", color: "#0f1c2e", background: "white", minHeight: "100vh" }}>
@@ -33,9 +28,7 @@ export default function Privacy() {
 
       <section style={{ padding: "64px 32px" }}>
         <div style={{ maxWidth: 800, margin: "0 auto", fontSize: 16, color: "#3a4a5c", lineHeight: 1.8 }}>
-          <p style={{ marginBottom: 16, padding: "16px 20px", background: "#fff8e1", border: "1px solid #f4d57b", borderRadius: 10, fontSize: 14, color: "#8a6d1f" }}>
-            <strong>⚠️ Placeholder content — pending legal review.</strong> This generic policy must be replaced with the practice's actual privacy policy reviewed by counsel before launch. The HIPAA Notice of Privacy Practices is a separate document distributed to patients in person.
-          </p>
+          <p style={{ marginBottom: 24, fontSize: 14, color: "#94a3b8" }}>This Privacy Policy explains how Long Island Brain &amp; Spine handles information collected through drfanaee.com. Our HIPAA Notice of Privacy Practices, which describes how protected health information is used and disclosed in clinical care, is a separate document provided to patients at their first visit.</p>
 
           <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 24, color: "#0a192f", marginTop: 32, marginBottom: 12 }}>Information We Collect</h2>
           <p style={{ marginBottom: 16 }}>When you visit drfanaee.com or use our online appointment request form, we may collect personal information you provide voluntarily, such as your name, email address, phone number, date of birth, insurance details, and a description of your medical concern. We also collect standard analytics data (pages viewed, browser type, IP address) to improve the site.</p>

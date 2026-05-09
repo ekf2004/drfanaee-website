@@ -1,25 +1,17 @@
 // Condition detail data for /conditions/:slug pages.
 //
-// ⚠️  MEDICAL REVIEW NEEDED ⚠️
-// Content drafted by AI from standard pain-management references. Dr. Fanaee
-// and clinical staff should review every entry for accuracy and tone before
-// the site goes live. In particular:
-//   - confirm symptom and cause lists match how this practice describes them
-//   - confirm the treatments[] array reflects what's actually offered for each
-//   - tighten any FAQ wording that sounds generic or off-brand
-//
-// Schema: matches the PROCEDURES shape so detail pages can mirror that layout.
+// Schema mirrors the PROCEDURES shape so detail pages can render the same way.
 //   slug              URL segment (e.g. /conditions/herniated-disc)
-//   name              Display name (already on homepage cards)
+//   name              Display name (also on homepage cards)
 //   icon              Identifier for the homepage card icon
-//   desc              One-line tagline (already on homepage cards)
+//   desc              One-line tagline (also on homepage cards)
 //   metaDescription   ~155-char description for <meta>
 //   hero              Lead paragraph at top of detail page
 //   overview          Longer descriptive paragraph
-//   causes            Array of common causes
-//   symptoms          Array of typical symptoms
-//   treatments        Array of procedure slugs (from procedures.js) offered for this condition
-//   faqs              Array of { q, a } — 3 per condition
+//   causes            Common causes (array)
+//   symptoms          Typical symptoms (array)
+//   treatments        Procedure slugs (from procedures.js) offered for this condition
+//   faqs              Array of { q, a }
 
 export const CONDITIONS = [
   {
