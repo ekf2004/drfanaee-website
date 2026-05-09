@@ -3,6 +3,7 @@ import { PROCEDURES } from "../data/procedures.js";
 import { CONDITIONS } from "../data/conditions.js";
 import { LOCATIONS } from "../data/locations.js";
 import { BLOG_POSTS } from "../data/blog.js";
+import { PROVIDERS } from "../data/providers.js";
 
 // Headshot images (base64 encoded)
 const IMG_ERIC = "/images/eric.jpg";
@@ -24,13 +25,6 @@ const GOOGLE_PLACE_IDS = {
 const FAX = "631-482-8766";
 const SITE_URL = "https://www.drfanaee.com";
 
-const PROVIDERS = [
-  { name: "Eric Fanaee, MD", role: "Medical Director", credentials: "Board Certified in Pain Medicine & Anesthesiology", initials: "EF", color: "#1e3a5f", bio: "Residency trained in Anesthesiology at the University of Chicago and fellowship trained in Pain Medicine at NYU Langone Medical Center, Dr. Fanaee has been serving Long Island since 2013 and is board certified in both Pain Medicine and Anesthesiology. He founded Long Island Brain & Spine with a mission to provide advanced interventional pain management that reduces pain, restores function, and improves quality of life. He offers sedation for all interventional procedures.", featured: true },
-  { name: "Clarence Kong, MD", role: "Assoc. Director, Interventional Spine & Pain Management", credentials: "Board Certified", initials: "CK", img: IMG_KONG, color: "#1e3a5f", bio: "Dr. Kong specializes in interventional spine procedures and pain management, bringing expertise in advanced minimally invasive techniques for chronic spinal conditions." },
-  { name: "Mary Milano Carter, MS, ANP-BC, AP-PMN, PMGT-BC, GERO-BC", role: "Board Certified Nurse Practitioner", credentials: "Pain Management & Geriatrics Certified", initials: "MC", img: IMG_MARY, color: "#2d6a8a", bio: "With 28 years of experience in chronic pain management, Mary holds board certifications in adult practice, pain management, and geriatrics. She develops individualized treatment plans for complex pain conditions." },
-  { name: "Thomas Yarrobino, FNP, DPT", role: "Nurse Practitioner & Doctor of Physical Therapy", credentials: "Musculoskeletal Specialist", initials: "TY", img: IMG_TOM, color: "#1e3a5f", bio: "Tom brings a unique dual perspective as both a nurse practitioner and physical therapist, specializing in musculoskeletal care including ultrasound-guided joint injections, trigger point therapy, PRP therapy, and individualized rehabilitation." },
-  { name: "Lisa Persico, PA-C, MPAS", role: "Physician Assistant", credentials: "Pain Management & Neurosurgery", initials: "LP", img: IMG_LISA, color: "#2d6a8a", bio: "Lisa is a dedicated patient advocate with a Master's in Physician Assistant Studies. She brings focused experience in chronic pain management and neurosurgery, developing personalized treatment plans that enhance quality of life." },
-];
 
 
 const TREATMENTS = [

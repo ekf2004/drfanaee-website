@@ -1,4 +1,12 @@
 import Home from './pages/Home.jsx'
+import About from './pages/About.jsx'
+import Team from './pages/Team.jsx'
+import Contact from './pages/Contact.jsx'
+import Insurance from './pages/Insurance.jsx'
+import Reviews from './pages/Reviews.jsx'
+import Privacy from './pages/Privacy.jsx'
+import Terms from './pages/Terms.jsx'
+import Accessibility from './pages/Accessibility.jsx'
 import TreatmentsIndex from './pages/TreatmentsIndex.jsx'
 import TreatmentDetail from './pages/TreatmentDetail.jsx'
 import ConditionsIndex from './pages/ConditionsIndex.jsx'
@@ -13,8 +21,8 @@ import { BLOG_POSTS } from './data/blog.js'
 
 export const routes = [
   { path: '/', Component: Home },
-  { path: '/about', Component: Home },
-  { path: '/team', Component: Home },
+  { path: '/about', Component: About },
+  { path: '/team', Component: Team },
   { path: '/treatments', Component: TreatmentsIndex },
   {
     path: '/treatments/:slug',
@@ -37,20 +45,18 @@ export const routes = [
     path: '/blog/:slug',
     Component: BlogPost,
     getStaticPaths: () => {
-      // Only pre-render published posts (publishDate <= today).
-      // Future-dated drafts will be added on the next Vercel rebuild.
       const today = new Date().toISOString().slice(0, 10)
       return BLOG_POSTS
         .filter((p) => !p.publishDate || p.publishDate <= today)
         .map((p) => `/blog/${p.slug}`)
     },
   },
-  { path: '/insurance', Component: Home },
-  { path: '/contact', Component: Home },
-  { path: '/reviews', Component: Home },
-  { path: '/privacy', Component: Home },
-  { path: '/terms', Component: Home },
-  { path: '/accessibility', Component: Home },
+  { path: '/insurance', Component: Insurance },
+  { path: '/contact', Component: Contact },
+  { path: '/reviews', Component: Reviews },
+  { path: '/privacy', Component: Privacy },
+  { path: '/terms', Component: Terms },
+  { path: '/accessibility', Component: Accessibility },
 ]
 
 export default routes
