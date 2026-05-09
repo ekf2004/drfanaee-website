@@ -1,23 +1,21 @@
-import App from './App.jsx'
-
-const Placeholder = () => <App />
+import Home from './pages/Home.jsx'
 
 export const routes = [
-  { path: '/', Component: Placeholder },
-  { path: '/about', Component: Placeholder },
-  { path: '/team', Component: Placeholder },
-  { path: '/treatments', Component: Placeholder },
-  { path: '/conditions', Component: Placeholder },
-  { path: '/locations/west-islip', Component: Placeholder },
-  { path: '/locations/smithtown', Component: Placeholder },
-  { path: '/locations/bellmore', Component: Placeholder },
-  { path: '/insurance', Component: Placeholder },
-  { path: '/contact', Component: Placeholder },
-  { path: '/blog', Component: Placeholder },
-  { path: '/reviews', Component: Placeholder },
-  { path: '/privacy', Component: Placeholder },
-  { path: '/terms', Component: Placeholder },
-  { path: '/accessibility', Component: Placeholder },
+  { path: '/', Component: Home },
+  { path: '/about', Component: Home },
+  { path: '/team', Component: Home },
+  { path: '/treatments', Component: Home },
+  { path: '/conditions', Component: Home },
+  { path: '/locations/west-islip', Component: Home },
+  { path: '/locations/smithtown', Component: Home },
+  { path: '/locations/bellmore', Component: Home },
+  { path: '/insurance', Component: Home },
+  { path: '/contact', Component: Home },
+  { path: '/blog', Component: Home },
+  { path: '/reviews', Component: Home },
+  { path: '/privacy', Component: Home },
+  { path: '/terms', Component: Home },
+  { path: '/accessibility', Component: Home },
 ]
 
 export default routes
