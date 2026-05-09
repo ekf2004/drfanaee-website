@@ -1,0 +1,135 @@
+// Location detail data for /locations/:slug pages.
+//
+// ⚠️  PRACTICE REVIEW NEEDED ⚠️
+// Address, phone, lat/lng, and service-area text are pulled from the
+// existing site and should be accurate. The following fields were filled
+// with reasonable defaults and need confirmation by office staff before
+// launch:
+//
+//   - hoursDetailed (per-day hours)  — currently mirrors the existing
+//     "Mon–Fri 8 AM – 5 PM" placeholder. Confirm or correct each office.
+//   - parking, transit, accessibility — generic placeholder text.
+//     Replace with the specifics for each office (free lot, street
+//     parking, suite location, elevator, etc.).
+//   - whatToExpect — generic. Tighten to match each office's check-in
+//     experience if there are differences.
+//
+// Backward compatibility: the original fields used by the homepage
+// (name, address, city, phone, hours, nearby, lat, lng) are preserved
+// unchanged. New fields are additive.
+
+const PHONE = "631-265-2020";
+const FAX = "631-482-8766";
+
+export const LOCATIONS = [
+  {
+    // Original homepage-card fields (do not change shape/case)
+    name: "West Islip",
+    address: "380 Montauk Highway",
+    city: "West Islip, NY 11795",
+    phone: PHONE,
+    hours: "Mon–Fri: 8:00 AM – 5:00 PM",
+    lat: 40.7062,
+    lng: -73.3068,
+    nearby: "Serving West Islip, Bay Shore, Babylon, Islip, Brightwaters, and the South Shore",
+
+    // New fields for /locations/west-islip detail page
+    slug: "west-islip",
+    fullName: "Long Island Brain & Spine — West Islip Office",
+    streetAddress: "380 Montauk Highway",
+    addressLocality: "West Islip",
+    addressRegion: "NY",
+    postalCode: "11795",
+    fax: FAX,
+    metaDescription: "Pain management in West Islip, NY — Dr. Eric Fanaee at 380 Montauk Highway. Epidural injections, RFA, spinal cord stimulation, Intracept, and more. Most insurance accepted.",
+    hero: "Our flagship West Islip office on Montauk Highway is the primary location for Dr. Eric Fanaee and the Long Island Brain & Spine team. We offer the full range of interventional pain management procedures here, with on-site fluoroscopy and ultrasound guidance.",
+    overview: "The West Islip office serves patients across the South Shore of Long Island, with convenient access from Sunrise Highway, the Southern State Parkway, and the LIRR Babylon branch. Procedures performed at this location include epidural injections, radiofrequency ablation, joint injections, PRP therapy, nerve blocks, trigger point injections, and consultations for advanced therapies like spinal cord stimulation and the Intracept procedure. More complex procedures (kyphoplasty, spinal cord stimulator implantation) are performed at Good Samaritan Hospital, also in West Islip.",
+    hoursDetailed: { mon: "8:00 AM – 5:00 PM", tue: "8:00 AM – 5:00 PM", wed: "8:00 AM – 5:00 PM", thu: "8:00 AM – 5:00 PM", fri: "8:00 AM – 5:00 PM", sat: "Closed", sun: "Closed" },
+    parking: "Free on-site parking is available for all patients.",
+    transit: "Accessible from the LIRR Babylon branch (Babylon and Bay Shore stations); Suffolk County Transit bus routes serve Montauk Highway.",
+    accessibility: "The office is wheelchair accessible. Please call ahead if you need any specific accommodations for your visit.",
+    whatToExpect: "On your first visit, please arrive 15 minutes early to complete intake paperwork. Bring your photo ID, insurance card, current medication list, and any imaging (MRI, X-ray, CT) on CD or in your patient portal. Most consultations last 30–45 minutes.",
+    procedures: [
+      "epidural-steroid-injections",
+      "radiofrequency-ablation",
+      "intracept-procedure",
+      "kyphoplasty",
+      "nerve-blocks",
+      "joint-injections",
+      "prp-therapy",
+      "trigger-point-injections",
+      "spinal-cord-stimulation",
+      "chronic-pain-management",
+    ],
+  },
+  {
+    name: "Smithtown",
+    address: "48 NY-25A, Suite 302",
+    city: "Smithtown, NY 11787",
+    phone: PHONE,
+    hours: "Mon–Fri: 8:00 AM – 5:00 PM",
+    lat: 40.8557,
+    lng: -73.2007,
+    nearby: "Serving Smithtown, Hauppauge, Commack, Kings Park, St. James, and the North Shore",
+
+    slug: "smithtown",
+    fullName: "Long Island Brain & Spine — Smithtown Office",
+    streetAddress: "48 NY-25A, Suite 302",
+    addressLocality: "Smithtown",
+    addressRegion: "NY",
+    postalCode: "11787",
+    fax: FAX,
+    metaDescription: "Pain management in Smithtown, NY — Dr. Eric Fanaee at 48 NY-25A, Suite 302. Interventional pain treatments for neck, back, and joint pain. Most insurance accepted.",
+    hero: "Our Smithtown office on Route 25A serves patients across the North Shore of Long Island. We offer the same expert interventional pain care here that you'd receive at any of Dr. Fanaee's offices.",
+    overview: "The Smithtown office is conveniently located on Route 25A in the heart of the Smithtown business district, easily accessible from the Long Island Expressway, Sunken Meadow State Parkway, and the LIRR Port Jefferson branch. Consultations and most office-based procedures are performed at this location, including epidural injections, joint injections, nerve blocks, and trigger point injections.",
+    hoursDetailed: { mon: "8:00 AM – 5:00 PM", tue: "8:00 AM – 5:00 PM", wed: "8:00 AM – 5:00 PM", thu: "8:00 AM – 5:00 PM", fri: "8:00 AM – 5:00 PM", sat: "Closed", sun: "Closed" },
+    parking: "On-site parking is available for patients.",
+    transit: "Accessible from the LIRR Port Jefferson branch (Smithtown station); Suffolk County Transit bus routes along Route 25A.",
+    accessibility: "The office is on the third floor, with elevator access. Wheelchair accessible. Please call ahead if you need any specific accommodations.",
+    whatToExpect: "On your first visit, please arrive 15 minutes early to complete intake paperwork. Bring your photo ID, insurance card, current medication list, and any imaging (MRI, X-ray, CT). The office is in Suite 302 — take the elevator to the third floor.",
+    procedures: [
+      "epidural-steroid-injections",
+      "radiofrequency-ablation",
+      "nerve-blocks",
+      "joint-injections",
+      "prp-therapy",
+      "trigger-point-injections",
+      "chronic-pain-management",
+    ],
+  },
+  {
+    name: "Bellmore",
+    address: "250 Pettit Avenue, Suite 03",
+    city: "Bellmore, NY 11710",
+    phone: PHONE,
+    hours: "Mon–Fri: 8:00 AM – 5:00 PM",
+    lat: 40.6687,
+    lng: -73.5271,
+    nearby: "Serving Bellmore, Merrick, Wantagh, Seaford, Massapequa, and Nassau County",
+
+    slug: "bellmore",
+    fullName: "Long Island Brain & Spine — Bellmore Office",
+    streetAddress: "250 Pettit Avenue, Suite 03",
+    addressLocality: "Bellmore",
+    addressRegion: "NY",
+    postalCode: "11710",
+    fax: FAX,
+    metaDescription: "Pain management in Bellmore, NY — Dr. Eric Fanaee at 250 Pettit Avenue, Suite 03. Interventional pain care serving Nassau County. Most insurance accepted.",
+    hero: "Our Bellmore office serves patients throughout Nassau County and the South Shore. From back and neck pain to complex chronic pain conditions, our team provides advanced interventional treatment in a comfortable office setting.",
+    overview: "The Bellmore office on Pettit Avenue is convenient for patients in Bellmore, Merrick, Wantagh, Seaford, Massapequa, and surrounding Nassau County communities. Easily accessible from Sunrise Highway, Merrick Road, and the LIRR Babylon branch (Bellmore station). Consultations and most office-based interventional procedures are performed at this location.",
+    hoursDetailed: { mon: "8:00 AM – 5:00 PM", tue: "8:00 AM – 5:00 PM", wed: "8:00 AM – 5:00 PM", thu: "8:00 AM – 5:00 PM", fri: "8:00 AM – 5:00 PM", sat: "Closed", sun: "Closed" },
+    parking: "On-site parking is available for patients.",
+    transit: "Walking distance from the LIRR Bellmore station (Babylon branch); NICE bus routes along Sunrise Highway and Merrick Road.",
+    accessibility: "The office is wheelchair accessible. Please call ahead if you need any specific accommodations for your visit.",
+    whatToExpect: "On your first visit, please arrive 15 minutes early to complete intake paperwork. Bring your photo ID, insurance card, current medication list, and any imaging (MRI, X-ray, CT). The office is in Suite 03.",
+    procedures: [
+      "epidural-steroid-injections",
+      "radiofrequency-ablation",
+      "nerve-blocks",
+      "joint-injections",
+      "prp-therapy",
+      "trigger-point-injections",
+      "chronic-pain-management",
+    ],
+  },
+];

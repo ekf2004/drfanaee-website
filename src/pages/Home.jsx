@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { PROCEDURES } from "../data/procedures.js";
 import { CONDITIONS } from "../data/conditions.js";
+import { LOCATIONS } from "../data/locations.js";
 
 // Headshot images (base64 encoded)
 const IMG_ERIC = "/images/eric.jpg";
@@ -28,12 +29,6 @@ const PROVIDERS = [
   { name: "Mary Milano Carter, MS, ANP-BC, AP-PMN, PMGT-BC, GERO-BC", role: "Board Certified Nurse Practitioner", credentials: "Pain Management & Geriatrics Certified", initials: "MC", img: IMG_MARY, color: "#2d6a8a", bio: "With 28 years of experience in chronic pain management, Mary holds board certifications in adult practice, pain management, and geriatrics. She develops individualized treatment plans for complex pain conditions." },
   { name: "Thomas Yarrobino, FNP, DPT", role: "Nurse Practitioner & Doctor of Physical Therapy", credentials: "Musculoskeletal Specialist", initials: "TY", img: IMG_TOM, color: "#1e3a5f", bio: "Tom brings a unique dual perspective as both a nurse practitioner and physical therapist, specializing in musculoskeletal care including ultrasound-guided joint injections, trigger point therapy, PRP therapy, and individualized rehabilitation." },
   { name: "Lisa Persico, PA-C, MPAS", role: "Physician Assistant", credentials: "Pain Management & Neurosurgery", initials: "LP", img: IMG_LISA, color: "#2d6a8a", bio: "Lisa is a dedicated patient advocate with a Master's in Physician Assistant Studies. She brings focused experience in chronic pain management and neurosurgery, developing personalized treatment plans that enhance quality of life." },
-];
-
-const LOCATIONS = [
-  { name: "West Islip", address: "380 Montauk Highway", city: "West Islip, NY 11795", phone: PHONE, hours: "Mon–Fri: 8:00 AM – 5:00 PM", lat: 40.7062, lng: -73.3068, nearby: "Serving West Islip, Bay Shore, Babylon, Islip, Brightwaters, and the South Shore" },
-  { name: "Smithtown", address: "48 NY-25A, Suite 302", city: "Smithtown, NY 11787", phone: PHONE, hours: "Mon–Fri: 8:00 AM – 5:00 PM", lat: 40.8557, lng: -73.2007, nearby: "Serving Smithtown, Hauppauge, Commack, Kings Park, St. James, and the North Shore" },
-  { name: "Bellmore", address: "250 Pettit Avenue, Suite 03", city: "Bellmore, NY 11710", phone: PHONE, hours: "Mon–Fri: 8:00 AM – 5:00 PM", lat: 40.6687, lng: -73.5271, nearby: "Serving Bellmore, Merrick, Wantagh, Seaford, Massapequa, and Nassau County" },
 ];
 
 

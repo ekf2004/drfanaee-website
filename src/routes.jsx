@@ -3,8 +3,10 @@ import TreatmentsIndex from './pages/TreatmentsIndex.jsx'
 import TreatmentDetail from './pages/TreatmentDetail.jsx'
 import ConditionsIndex from './pages/ConditionsIndex.jsx'
 import ConditionDetail from './pages/ConditionDetail.jsx'
+import LocationDetail from './pages/LocationDetail.jsx'
 import { PROCEDURES } from './data/procedures.js'
 import { CONDITIONS } from './data/conditions.js'
+import { LOCATIONS } from './data/locations.js'
 
 export const routes = [
   { path: '/', Component: Home },
@@ -22,9 +24,11 @@ export const routes = [
     Component: ConditionDetail,
     getStaticPaths: () => CONDITIONS.map((c) => `/conditions/${c.slug}`),
   },
-  { path: '/locations/west-islip', Component: Home },
-  { path: '/locations/smithtown', Component: Home },
-  { path: '/locations/bellmore', Component: Home },
+  {
+    path: '/locations/:slug',
+    Component: LocationDetail,
+    getStaticPaths: () => LOCATIONS.map((l) => `/locations/${l.slug}`),
+  },
   { path: '/insurance', Component: Home },
   { path: '/contact', Component: Home },
   { path: '/blog', Component: Home },
