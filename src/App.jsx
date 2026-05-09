@@ -12,7 +12,7 @@ const IMG_PROCEDURE = "/images/procedure.jpg";
 
 const PHONE = "631-265-2020";
 const API_BASE = "https://web-production-ad8a2.up.railway.app";
-const GOOGLE_API_KEY = "AIzaSyCh0-HapCkZHkzgLQ7tpMDUm5WIdSMZwSU";
+const GOOGLE_API_KEY = import.meta.env.VITE_GOOGLE_PLACES_KEY;
 const GOOGLE_PLACE_IDS = {
   "west-islip": "ChIJKSsKVgEt6IkRNsgH91-iCZo",
   "smithtown": "ChIJa_o-WEwt6IkRja-AP4Jb618"
@@ -1620,7 +1620,7 @@ export default function DrFanaeeSite() {
                 <div style={{ height: 180, position: "relative", overflow: "hidden" }}>
                   <iframe
                     title={`Map of ${loc.name} office`}
-                    src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyCh0-HapCkZHkzgLQ7tpMDUm5WIdSMZwSU&q=${encodeURIComponent(loc.address + ", " + loc.city)}&zoom=15`}
+                    src={`https://www.google.com/maps/embed/v1/place?key=${GOOGLE_API_KEY}&q=${encodeURIComponent(loc.address + ", " + loc.city)}&zoom=15`}
                     style={{ width: "100%", height: "100%", border: "none" }}
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
